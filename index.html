@@ -3137,7 +3137,7 @@
 
     /* ─────────────────────── VERSIONS DATA (v93) ─────────────────────── */
     const versionsData = [
-      { number: "v2.1", date: "14 Sept 2026", features: ["☁️ SUPABASE — Le bouton Sauvegarder exporte désormais vers localStorage ET Supabase ; le bouton Cloud importe depuis Supabase", "🔧 Configuration Supabase requise : table `exportcloud` avec colonnes `id` (int, primary key), `data` (text), `updated_at` (timestamptz)", "⚙️ Paramètres à configurer : SUPABASE_URL et SUPABASE_ANON_KEY"] },
+      { number: "v2.1", date: "14 Sept 2026", features: ["☁️ SUPABASE — Le bouton Sauvegarder exporte désormais vers localStorage ET Supabase ; le bouton Cloud importe depuis Supabase", "🔧 Configuration Supabase requise : table `exportcloud` avec colonnes `id` (int, primary key), `data` (text) et `created_at`", "⚙️ Paramètres à configurer : SUPABASE_URL et SUPABASE_ANON_KEY"] },
       { number: "v2.0", date: "14 Sept 2026", features: ["☁️ BOUTON CLOUD — Nouveau bouton Cloud dans la barre d'en-tête, à côté de Restaurer/Sauvegarder/Reset ; désactivé par défaut (grisé), cliquable pour basculer entre actif (couleur slate active) et inactif (grisé)", "🔜 PRÉPARATION SUPABASE — Le bouton est prêt pour l'intégration future avec Supabase : export vers le cloud et import depuis le cloud"] },
       { number: "v1.9", date: "7 Sept 2026", features: ["❗ TÂCHES OBLIGATOIRES (PRO et PRIVEE) — Les tâches actives apparaissent désormais en haut de la liste (triées par date), et les tâches passées (archivées) sont reléguées en bas"] },
       { number: "v1.8", date: "6 Sept 2026", features: ["🐛 CORRECTIF — Export automatique du matin (Export_Done_PRO/PRIVEE) : ajout d'une revérification dès que l'onglet redevient visible, pour compenser les navigateurs qui mettent en pause le minuteur en arrière-plan et faisaient parfois manquer la fenêtre 7h-11h30"] },
@@ -3889,8 +3889,7 @@
       };
       const payload = {
         id: 1,
-        data: backupContent,
-        updated_at: new Date().toISOString()
+        data: backupContent
       };
       try {
         // Vérifier d'abord si la ligne existe. Ainsi, une réponse 204 d'un
@@ -3914,7 +3913,7 @@
           ? await fetch(`${SUPABASE_URL}/rest/v1/exportcloud?id=eq.1`, {
               method: 'PATCH',
               headers,
-              body: JSON.stringify({ data: payload.data, updated_at: payload.updated_at })
+              body: JSON.stringify({ data: payload.data })
             })
           : await fetch(`${SUPABASE_URL}/rest/v1/exportcloud`, {
               method: 'POST',
