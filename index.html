@@ -3863,25 +3863,58 @@
         return false;
       }
       console.log('📤 Exporting to Supabase...');
+      const headers = {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=representation'
+      };
+      const payload = {
+        id: 1,
+        data: backupContent,
+        updated_at: new Date().toISOString()
+      };
       try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/exportcloud`, {
-          method: 'POST',
-          headers: {
-            'apikey': SUPABASE_ANON_KEY,
-            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-            'Content-Type': 'application/json',
-            'Prefer': 'resolution=merge-duplicates,return=minimal'
-          },
-          body: JSON.stringify({ id: 1, data: backupContent })
+        // Mettre à jour explicitement la sauvegarde existante. Cette méthode
+        // évite que l'upsert POST dépende de la configuration de conflit/RLS.
+        const updateResponse = await fetch(`${SUPABASE_URL}/rest/v1/exportcloud?id=eq.1`, {
+          method: 'PATCH',
+          headers,
+          body: JSON.stringify({ data: payload.data, updated_at: payload.updated_at })
         });
-        if (response.ok) {
-          console.log('✅ Export vers Supabase réussi');
-          return true;
-        } else {
-          const err = await response.text();
-          console.error('❌ Erreur Supabase:', err);
-          return false;
+
+        if (updateResponse.ok) {
+          const updateBody = await updateResponse.text();
+          const updatedRows = updateBody ? JSON.parse(updateBody) : [];
+          if (Array.isArray(updatedRows) && updatedRows.length > 0) {
+            console.log('✅ Mise à jour Supabase réussie');
+            return true;
+          }
         }
+
+        // Première sauvegarde : la ligne id=1 n'existe pas encore.
+        const insertResponse = await fetch(`${SUPABASE_URL}/rest/v1/exportcloud`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify(payload)
+        });
+        if (insertResponse.ok) {
+          console.log('✅ Création de la sauvegarde Supabase réussie');
+          return true;
+        }
+
+        const updateError = updateResponse ? await updateResponse.text() : 'réponse absente';
+        const insertError = await insertResponse.text();
+        console.error('❌ Erreur Supabase:', {
+          updateStatus: updateResponse.status,
+          updateError,
+          insertStatus: insertResponse.status,
+          insertError
+        });
+        if (updateResponse.status === 401 || updateResponse.status === 403 || insertResponse.status === 401 || insertResponse.status === 403) {
+          alert('❌ Supabase refuse la sauvegarde distante.\n\nAjoutez/vérifiez les policies RLS UPDATE et INSERT sur la table exportcloud pour le rôle anon.\n\nLa sauvegarde locale a bien été conservée.');
+        }
+        return false;
       } catch(e) {
         console.error('❌ Exception Supabase:', e);
         return false;
