@@ -3893,45 +3893,43 @@
         updated_at: new Date().toISOString()
       };
       try {
-        // Mettre à jour explicitement la sauvegarde existante. Cette méthode
-        // évite que l'upsert POST dépende de la configuration de conflit/RLS.
-        const updateResponse = await fetch(`${SUPABASE_URL}/rest/v1/exportcloud?id=eq.1`, {
-          method: 'PATCH',
-          headers,
-          body: JSON.stringify({ data: payload.data, updated_at: payload.updated_at })
+        // Vérifier d'abord si la ligne existe. Ainsi, une réponse 204 d'un
+        // PATCH est correctement considérée comme une réussite et on évite
+        // de tenter inutilement un INSERT sur une clé primaire déjà présente.
+        const existingResponse = await fetch(`${SUPABASE_URL}/rest/v1/exportcloud?select=id&id=eq.1`, {
+          method: 'GET',
+          headers: { ...headers, 'Accept': 'application/json' }
         });
-
-        if (updateResponse.ok) {
-          const updateBody = await updateResponse.text();
-          const updatedRows = updateBody ? JSON.parse(updateBody) : [];
-          if (Array.isArray(updatedRows) && updatedRows.length > 0) {
-            console.log('✅ Mise à jour Supabase réussie');
-            return true;
-          }
+        if (!existingResponse.ok) {
+          const errorText = await existingResponse.text();
+          console.error('❌ Vérification Supabase impossible:', existingResponse.status, errorText);
+          alert(`❌ Supabase refuse l'accès à la table exportcloud (HTTP ${existingResponse.status}).\n\nVérifiez la policy SELECT pour le rôle anon.\n\nDétail : ${errorText.substring(0, 240)}`);
+          return false;
         }
 
-        // Première sauvegarde : la ligne id=1 n'existe pas encore.
-        const insertResponse = await fetch(`${SUPABASE_URL}/rest/v1/exportcloud`, {
-          method: 'POST',
-          headers,
-          body: JSON.stringify(payload)
-        });
-        if (insertResponse.ok) {
-          console.log('✅ Création de la sauvegarde Supabase réussie');
+        const existingRows = await existingResponse.json();
+        const rowExists = Array.isArray(existingRows) && existingRows.some(row => String(row.id) === '1');
+
+        const writeResponse = rowExists
+          ? await fetch(`${SUPABASE_URL}/rest/v1/exportcloud?id=eq.1`, {
+              method: 'PATCH',
+              headers,
+              body: JSON.stringify({ data: payload.data, updated_at: payload.updated_at })
+            })
+          : await fetch(`${SUPABASE_URL}/rest/v1/exportcloud`, {
+              method: 'POST',
+              headers,
+              body: JSON.stringify(payload)
+            });
+
+        if (writeResponse.ok) {
+          console.log(rowExists ? '✅ Mise à jour Supabase réussie' : '✅ Création de la sauvegarde Supabase réussie');
           return true;
         }
-
-        const updateError = updateResponse ? await updateResponse.text() : 'réponse absente';
-        const insertError = await insertResponse.text();
-        console.error('❌ Erreur Supabase:', {
-          updateStatus: updateResponse.status,
-          updateError,
-          insertStatus: insertResponse.status,
-          insertError
-        });
-        if (updateResponse.status === 401 || updateResponse.status === 403 || insertResponse.status === 401 || insertResponse.status === 403) {
-          alert('❌ Supabase refuse la sauvegarde distante.\n\nAjoutez/vérifiez les policies RLS UPDATE et INSERT sur la table exportcloud pour le rôle anon.\n\nLa sauvegarde locale a bien été conservée.');
-        }
+        const writeError = await writeResponse.text();
+        const policy = rowExists ? 'UPDATE' : 'INSERT';
+        console.error(`❌ Erreur Supabase ${policy}:`, writeResponse.status, writeError);
+        alert(`❌ Supabase refuse l'export (${policy}, HTTP ${writeResponse.status}).\n\nLa sauvegarde locale a bien été conservée.\n\nDétail : ${writeError.substring(0, 240)}`);
         return false;
       } catch(e) {
         console.error('❌ Exception Supabase:', e);
@@ -4111,7 +4109,7 @@
         const supabaseContent = `========================================\nSAUVEGARDE COMPLETE DAILY PLANNER\nVersion v2.1 - Export global (Supabase)\nDate: ${d2}/${m2}/${y2} à ${h2}:${min2}\n========================================\n` + gatherFullBackupJSONString();
         exportToSupabase(supabaseContent).then(success => {
           if(success) alert('✅ Sauvegarde globale effectuée !\n• Téléchargement local OK\n• Export Supabase OK');
-          else alert('️ Sauvegarde locale OK, mais export Supabase a échoué.\nVérifiez vos paramètres SUPABASE_URL et SUPABASE_ANON_KEY.');
+          else alert('❌ Sauvegarde locale OK, mais export Supabase refusé.\n\nVérifiez les policies RLS UPDATE et INSERT de la table exportcloud pour le rôle anon.\n\nSi ce message reste ancien, rechargez la page publiée avec Ctrl + F5.');
         });
       }
       render(preserveScroll);
