@@ -3330,13 +3330,31 @@
       localStorage.setItem('planner_v35_threepoints_pro', JSON.stringify(data.threePointsPro||[]));
       localStorage.setItem('planner_v35_threepoints_privee', JSON.stringify(data.threePointsPrivee||[]));
       if (data.threePointsFilledAtPro) localStorage.setItem('planner_v35_threepoints_filledat_pro', String(data.threePointsFilledAtPro));
+      else localStorage.removeItem('planner_v35_threepoints_filledat_pro');
       if (data.threePointsFilledAtPrivee) localStorage.setItem('planner_v35_threepoints_filledat_privee', String(data.threePointsFilledAtPrivee));
+      else localStorage.removeItem('planner_v35_threepoints_filledat_privee');
       localStorage.setItem('planner_important_dates_pro', JSON.stringify(importantDatesPro));
       localStorage.setItem('planner_important_dates_privee', JSON.stringify(importantDatesPrivee));
       localStorage.setItem('planner_mandatory_tasks_pro', JSON.stringify(mandatoryTasksPro));
       localStorage.setItem('planner_mandatory_tasks_privee', JSON.stringify(mandatoryTasksPrivee));
       localStorage.setItem('planner_v35_tracking_frozen_months', JSON.stringify(data.trackingFrozenMonths||[]));
       if (data.lastMode === 'PRO' || data.lastMode === 'PRIVEE') localStorage.setItem('planner_v35_last_mode', data.lastMode);
+
+      // L'import écrit d'abord localStorage, puis l'état affiché doit être
+      // rechargé explicitement : render() seul conserverait les anciennes
+      // variables encore présentes en mémoire.
+      if (isPlannerMode(currentMode)) {
+        inputTasks = [];
+        progressTasks = [];
+        doneTasks = [];
+        libraryTasks = [];
+        taskIdCounter = 0;
+        lastSaveTime = '';
+        lastMorningExportDate = '';
+        loadFromLocalStorage();
+        loadImportantDates();
+        loadMandatoryTasks();
+      }
     }
 
     function toggleInfoModal() {
