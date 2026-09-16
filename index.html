@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0083)https://www-workspace.pagepop.cn/uid-55355119/daily-planner/Daily_Planner_v2.1.html -->
+<!-- saved from url=(0083)https://www-workspace.pagepop.cn/uid-55355119/daily-planner/Daily_Planner_v2.2.html -->
 <html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Planner · v2.1</title>
+  <title>Daily Planner · v2.2</title>
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="./Daily Planner · v2.2_files/css2" rel="stylesheet">
   <style>
     /* ====== STYLES (inchangés) ====== */
     :root {
@@ -328,6 +328,11 @@
     }
     .mti-done .mandatory-task-check { color: var(--teal); }
     /* ── LISTE DES DATES IMPORTANTES ── */
+        /* ── DURATION FIELDS IN IMPORTANT DATES ── */
+    .date-duration-group { display:flex; gap:.5rem; align-items:center; }
+    .date-duration-label { font-size:.7rem; color:var(--ink-muted); white-space:nowrap; }
+    .date-duration-sep { color:var(--ink-muted); font-weight:500; }
+    .date-duration-display { font-size:.72rem; color:var(--teal); margin-top:.2rem; font-weight:500; }
     .important-date-form {
       display: flex;
       gap: .6rem;
@@ -1398,21 +1403,21 @@
         <div class="page-wrap privee-mode">
           <header class="app-header">
             <div class="mode-switcher">
-              <button onclick="switchMode(&#39;PRO&#39;)" class="mode-btn ">PRO</button>
-              <button onclick="switchMode(&#39;PRIVEE&#39;)" class="mode-btn active-prv">Privée</button>
-              <button onclick="switchMode(&#39;TRACKING&#39;)" class="mode-btn ">Tracking</button>
+              <button onclick="switchMode('PRO')" class="mode-btn ">PRO</button>
+              <button onclick="switchMode('PRIVEE')" class="mode-btn active-prv">Privée</button>
+              <button onclick="switchMode('TRACKING')" class="mode-btn ">Tracking</button>
             </div>
             <div style="display:flex;align-items:center;">
-              <h1 class="app-title">Daily Planner <span class="version">v2.1</span></h1>
+              <h1 class="app-title">Daily Planner <span class="version">v2.2</span></h1>
               <div class="info-btn" onclick="toggleInfoModal()" title="Informations sur les versions">ⓘ</div>
             </div>
-            <div class="datetime-badge">Lundi 14 Septembre · 16h50 <span style="margin:0 .4rem;opacity:.4;">·</span> <span class="save-dot"></span> Sauvegardé 14/9/2026 à 16:50</div><div class="header-meta"><button onclick="toggleImportantDatesModal()" class="calendar-icon-btn cal-normal" title="Dates importantes">📅<span class="cal-badge">1</span></button><button onclick="toggleMandatoryModal()" class="mandatory-icon-btn " title="Tâches obligatoires">❗</button><button onclick="restoreFromBackup()" class="btn btn-ghost">📂 Restaurer</button><button onclick="toggleCloudButton()" id="cloudBtn" class="btn btn-cloud" title="☁️ Cliquer pour importer depuis Supabase">☁️ Cloud</button><button onclick="saveToLocalStorage(true)" class="btn btn-success">💾 Sauvegarder</button><button onclick="resetAllTasks()" class="btn btn-danger">🔄 Reset</button></div>
+            <div class="datetime-badge">Mercredi 16 Septembre · 10h42 <span style="margin:0 .4rem;opacity:.4;">·</span> <span class="save-dot"></span> Sauvegardé 16/9/2026 à 10:42</div><div class="header-meta"><button onclick="toggleImportantDatesModal()" class="calendar-icon-btn cal-normal" title="Dates importantes">📅<span class="cal-badge">2</span></button><button onclick="toggleMandatoryModal()" class="mandatory-icon-btn " title="Tâches obligatoires">❗</button><button onclick="restoreFromBackup()" class="btn btn-ghost">📂 Restaurer</button><button onclick="toggleCloudButton()" id="cloudBtn" class="btn btn-cloud" title="☁️ Cliquer pour importer depuis Supabase">☁️ Cloud</button><button onclick="saveToLocalStorage(true)" class="btn btn-success">💾 Sauvegarder</button><button onclick="resetAllTasks()" class="btn btn-danger">🔄 Reset</button></div>
           </header>
 
             <div class="center-toggle"><button onclick="toggleLibraryDonut()" id="btn-library-donut-toggle" class="toggle-chevron-btn" title="Afficher/masquer librairie"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon rotated"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div>
             <div id="libraryDonutSection" class="collapsible-section expanded" style="margin-bottom:1.5rem;">
               <div class="grid-3" style="margin-bottom:1.5rem;">
-        <div class="card" id="cardLibrary" style="display: flex; flex-direction: column; align-self: stretch; overflow: hidden; height: 765px;">
+        <div class="card" id="cardLibrary" style="display: flex; flex-direction: column; align-self: stretch; overflow: hidden; height: 771px;">
           <div class="card-header">
             <div class="card-header-title">
               <span class="section-icon section-icon-gold">📚</span>
@@ -2371,8 +2376,8 @@
           
             <div class="serie-pill-row" style="display:flex;gap:.45rem;margin-bottom:.5rem;align-items:center;">
               <span style="font-size:.72rem;color:var(--ink-muted);font-weight:500;letter-spacing:.05em;">Choix :</span>
-              <span class="btn btn-sm" title="Le choix se fait à l&#39;ajout dans Input" style="background:var(--violet);color:white;padding:.25rem .8rem;font-size:.78rem;font-weight:600;border-radius:999px;border:none;min-width:36px;text-align:center;cursor:default;">1</span>
-              <span class="btn btn-sm" title="Le choix se fait à l&#39;ajout dans Input" style="background:var(--teal);color:white;padding:.25rem .8rem;font-size:.78rem;font-weight:600;border-radius:999px;border:none;min-width:36px;text-align:center;cursor:default;">2</span>
+              <span class="btn btn-sm" title="Le choix se fait à l'ajout dans Input" style="background:var(--violet);color:white;padding:.25rem .8rem;font-size:.78rem;font-weight:600;border-radius:999px;border:none;min-width:36px;text-align:center;cursor:default;">1</span>
+              <span class="btn btn-sm" title="Le choix se fait à l'ajout dans Input" style="background:var(--teal);color:white;padding:.25rem .8rem;font-size:.78rem;font-weight:600;border-radius:999px;border:none;min-width:36px;text-align:center;cursor:default;">2</span>
             </div>
           
           
@@ -2650,7 +2655,7 @@
             </div>
           </div>
         </div>
-      <div class="card" id="cardAvancement" style="display: flex; flex-direction: column; align-self: stretch; overflow: hidden; height: 765px;">
+      <div class="card" id="cardAvancement" style="display: flex; flex-direction: column; align-self: stretch; overflow: hidden; height: 771px;">
         <div class="card-header">
           <div class="card-header-title">
             <span class="section-icon section-icon-teal">📊</span>
@@ -2658,8 +2663,8 @@
             <span class="count-badge">5</span>
           </div>
         </div><div class="card-body" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:.8rem;">
-        <svg width="280" height="280" viewBox="0 0 280 280"><circle cx="140" cy="140" r="95" fill="none" stroke="var(--ivory-deep)" stroke-width="54"></circle><g transform="rotate(-90 140 140)"><circle cx="140" cy="140" r="95" fill="none" stroke="var(--slate)" stroke-width="54" stroke-dasharray="116.38052083641215 480.5220833456486" stroke-dashoffset="0" stroke-linecap="butt"></circle><circle cx="140" cy="140" r="95" fill="none" stroke="var(--gold)" stroke-width="54" stroke-dasharray="235.7610416728243 361.14156250923645" stroke-dashoffset="-119.38052083641215" stroke-linecap="butt"></circle><circle cx="140" cy="140" r="95" fill="none" stroke="var(--teal)" stroke-width="54" stroke-dasharray="235.7610416728243 361.14156250923645" stroke-dashoffset="-358.14156250923645" stroke-linecap="butt"></circle></g><text x="195.83959896778495" y="56.14338553437999" text-anchor="middle" dominant-baseline="middle" font-family="&#39;DM Mono&#39;,monospace" font-size="15" font-weight="700" fill="white">1</text><text x="195.83959896778495" y="72.14338553437999" text-anchor="middle" dominant-baseline="middle" font-family="&#39;DM Sans&#39;,sans-serif" font-size="9.5" font-weight="500" fill="rgba(255,255,255,.85)">20%</text><text x="195.83959896778495" y="209.85661446562" text-anchor="middle" dominant-baseline="middle" font-family="&#39;DM Mono&#39;,monospace" font-size="15" font-weight="700" fill="white">2</text><text x="195.83959896778495" y="225.85661446562" text-anchor="middle" dominant-baseline="middle" font-family="&#39;DM Sans&#39;,sans-serif" font-size="9.5" font-weight="500" fill="rgba(255,255,255,.85)">40%</text><text x="49.649630951960404" y="103.64338553438" text-anchor="middle" dominant-baseline="middle" font-family="&#39;DM Mono&#39;,monospace" font-size="15" font-weight="700" fill="white">2</text><text x="49.649630951960404" y="119.64338553438" text-anchor="middle" dominant-baseline="middle" font-family="&#39;DM Sans&#39;,sans-serif" font-size="9.5" font-weight="500" fill="rgba(255,255,255,.85)">40%</text><text x="140" y="130" text-anchor="middle" dominant-baseline="middle" font-family="&#39;Cormorant Garamond&#39;,serif" font-size="46" font-weight="600" fill="var(--ink)">5</text><text x="140" y="156" text-anchor="middle" dominant-baseline="middle" font-family="&#39;DM Sans&#39;,sans-serif" font-size="11" fill="var(--ink-muted)" letter-spacing="1">TÂCHES</text></svg><div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;"><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--ink-muted);"><span style="width:10px;height:10px;border-radius:50%;background:var(--slate);display:inline-block;"></span>Input · 1</span><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--ink-muted);"><span style="width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block;"></span>In Progress · 2</span><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--ink-muted);"><span style="width:10px;height:10px;border-radius:50%;background:var(--teal);display:inline-block;"></span>Done · 2</span></div></div></div>
-        <div class="card" id="card3Points" style="display: flex; flex-direction: column; align-self: stretch; overflow: hidden; height: 765px;">
+        <svg width="280" height="280" viewBox="0 0 280 280"><circle cx="140" cy="140" r="95" fill="none" stroke="var(--ivory-deep)" stroke-width="54"></circle><g transform="rotate(-90 140 140)"><circle cx="140" cy="140" r="95" fill="none" stroke="var(--slate)" stroke-width="54" stroke-dasharray="116.38052083641215 480.5220833456486" stroke-dashoffset="0" stroke-linecap="butt"></circle><circle cx="140" cy="140" r="95" fill="none" stroke="var(--gold)" stroke-width="54" stroke-dasharray="235.7610416728243 361.14156250923645" stroke-dashoffset="-119.38052083641215" stroke-linecap="butt"></circle><circle cx="140" cy="140" r="95" fill="none" stroke="var(--teal)" stroke-width="54" stroke-dasharray="235.7610416728243 361.14156250923645" stroke-dashoffset="-358.14156250923645" stroke-linecap="butt"></circle></g><text x="195.83959896778495" y="56.14338553437999" text-anchor="middle" dominant-baseline="middle" font-family="'DM Mono',monospace" font-size="15" font-weight="700" fill="white">1</text><text x="195.83959896778495" y="72.14338553437999" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="9.5" font-weight="500" fill="rgba(255,255,255,.85)">20%</text><text x="195.83959896778495" y="209.85661446562" text-anchor="middle" dominant-baseline="middle" font-family="'DM Mono',monospace" font-size="15" font-weight="700" fill="white">2</text><text x="195.83959896778495" y="225.85661446562" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="9.5" font-weight="500" fill="rgba(255,255,255,.85)">40%</text><text x="49.649630951960404" y="103.64338553438" text-anchor="middle" dominant-baseline="middle" font-family="'DM Mono',monospace" font-size="15" font-weight="700" fill="white">2</text><text x="49.649630951960404" y="119.64338553438" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="9.5" font-weight="500" fill="rgba(255,255,255,.85)">40%</text><text x="140" y="130" text-anchor="middle" dominant-baseline="middle" font-family="'Cormorant Garamond',serif" font-size="46" font-weight="600" fill="var(--ink)">5</text><text x="140" y="156" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="11" fill="var(--ink-muted)" letter-spacing="1">TÂCHES</text></svg><div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;"><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--ink-muted);"><span style="width:10px;height:10px;border-radius:50%;background:var(--slate);display:inline-block;"></span>Input · 1</span><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--ink-muted);"><span style="width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block;"></span>In Progress · 2</span><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--ink-muted);"><span style="width:10px;height:10px;border-radius:50%;background:var(--teal);display:inline-block;"></span>Done · 2</span></div></div></div>
+        <div class="card" id="card3Points" style="display: flex; flex-direction: column; align-self: stretch; overflow: hidden; height: 771px;">
           <div class="card-header">
             <div class="card-header-title">
               <span class="section-icon section-icon-prv">🎯</span>
@@ -2671,15 +2676,15 @@
           <div class="card-body" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;">
             <svg width="280" height="280" viewBox="0 0 280 280">
         <g transform="rotate(-90 140 140)"><circle id="tpArc0" cx="140" cy="140" r="95" fill="none" stroke="var(--violet)" stroke-opacity=".55" stroke-width="54" stroke-dasharray="194.96753472735358 401.9350694547071" stroke-dashoffset="0" stroke-linecap="butt"></circle><circle id="tpArc1" cx="140" cy="140" r="95" fill="none" stroke="var(--ivory-deep)" stroke-opacity="1" stroke-width="54" stroke-dasharray="194.96753472735358 401.9350694547071" stroke-dashoffset="-198.96753472735358" stroke-linecap="butt"></circle><circle id="tpArc2" cx="140" cy="140" r="95" fill="none" stroke="var(--ivory-deep)" stroke-opacity="1" stroke-width="54" stroke-dasharray="194.96753472735358 401.9350694547071" stroke-dashoffset="-397.93506945470716" stroke-linecap="butt"></circle></g>
-        <text x="222.2724133595217" y="92.50000000000001" text-anchor="middle" dominant-baseline="middle" font-family="&#39;DM Mono&#39;,monospace" font-size="14" font-weight="700" fill="white">1</text><text x="140" y="235" text-anchor="middle" dominant-baseline="middle" font-family="&#39;DM Mono&#39;,monospace" font-size="14" font-weight="700" fill="var(--ink-muted)">2</text><text x="57.727586640478336" y="92.5" text-anchor="middle" dominant-baseline="middle" font-family="&#39;DM Mono&#39;,monospace" font-size="14" font-weight="700" fill="var(--ink-muted)">3</text>
-        <text x="140" y="130" text-anchor="middle" dominant-baseline="middle" font-family="&#39;Cormorant Garamond&#39;,serif" font-size="46" font-weight="600" fill="var(--ink)">0/3</text>
-        <text x="140" y="156" text-anchor="middle" dominant-baseline="middle" font-family="&#39;DM Sans&#39;,sans-serif" font-size="11" fill="var(--ink-muted)" letter-spacing="1">POINTS</text>
+        <text x="222.2724133595217" y="92.50000000000001" text-anchor="middle" dominant-baseline="middle" font-family="'DM Mono',monospace" font-size="14" font-weight="700" fill="white">1</text><text x="140" y="235" text-anchor="middle" dominant-baseline="middle" font-family="'DM Mono',monospace" font-size="14" font-weight="700" fill="var(--ink-muted)">2</text><text x="57.727586640478336" y="92.5" text-anchor="middle" dominant-baseline="middle" font-family="'DM Mono',monospace" font-size="14" font-weight="700" fill="var(--ink-muted)">3</text>
+        <text x="140" y="130" text-anchor="middle" dominant-baseline="middle" font-family="'Cormorant Garamond',serif" font-size="46" font-weight="600" fill="var(--ink)">0/3</text>
+        <text x="140" y="156" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="11" fill="var(--ink-muted)" letter-spacing="1">POINTS</text>
       </svg>
             <div style="width:100%;display:flex;flex-direction:column;gap:.55rem;">
           <div id="tpRow0" style="display:flex;align-items:flex-start;gap:.6rem;padding:.6rem;border-radius:var(--radius-md);background:rgba(255,255,255,.6);border:1px solid var(--ivory-deep);">
             <span style="width:22px;height:22px;border-radius:50%;background:var(--violet);color:white;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:.1rem;">1</span>
             <div style="flex:1;min-width:0;">
-              <textarea onchange="updateThreePointText(0,this.value)" placeholder="Point important n°1…" style="width:100%;min-height:44px;resize:vertical;border:1px solid var(--ivory-deep);border-radius:var(--radius-sm);padding:.45rem .6rem;font-family:&#39;DM Sans&#39;,sans-serif;font-size:.82rem;color:var(--ink);background:white;">PRO NOTE PASSWORD</textarea>
+              <textarea onchange="updateThreePointText(0,this.value)" placeholder="Point important n°1…" style="width:100%;min-height:44px;resize:vertical;border:1px solid var(--ivory-deep);border-radius:var(--radius-sm);padding:.45rem .6rem;font-family:'DM Sans',sans-serif;font-size:.82rem;color:var(--ink);background:white;">PRO NOTE PASSWORD</textarea>
             </div>
             <div style="display:flex;flex-direction:column;gap:.3rem;flex-shrink:0;">
               <button onclick="toggleThreePointDone(0)" class="btn btn-sm" style="background:var(--teal);color:white;padding:.35rem .7rem;font-size:.68rem;">✓ Valider</button>
@@ -2690,7 +2695,7 @@
           <div id="tpRow1" style="display:flex;align-items:flex-start;gap:.6rem;padding:.6rem;border-radius:var(--radius-md);background:rgba(255,255,255,.6);border:1px solid var(--ivory-deep);">
             <span style="width:22px;height:22px;border-radius:50%;background:var(--gold);color:white;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:.1rem;">2</span>
             <div style="flex:1;min-width:0;">
-              <textarea onchange="updateThreePointText(1,this.value)" placeholder="Point important n°2…" style="width:100%;min-height:44px;resize:vertical;border:1px solid var(--ivory-deep);border-radius:var(--radius-sm);padding:.45rem .6rem;font-family:&#39;DM Sans&#39;,sans-serif;font-size:.82rem;color:var(--ink);background:white;"></textarea>
+              <textarea onchange="updateThreePointText(1,this.value)" placeholder="Point important n°2…" style="width:100%;min-height:44px;resize:vertical;border:1px solid var(--ivory-deep);border-radius:var(--radius-sm);padding:.45rem .6rem;font-family:'DM Sans',sans-serif;font-size:.82rem;color:var(--ink);background:white;"></textarea>
             </div>
             <div style="display:flex;flex-direction:column;gap:.3rem;flex-shrink:0;">
               <button onclick="toggleThreePointDone(1)" class="btn btn-sm" style="background:var(--teal);color:white;padding:.35rem .7rem;font-size:.68rem;">✓ Valider</button>
@@ -2701,7 +2706,7 @@
           <div id="tpRow2" style="display:flex;align-items:flex-start;gap:.6rem;padding:.6rem;border-radius:var(--radius-md);background:rgba(255,255,255,.6);border:1px solid var(--ivory-deep);">
             <span style="width:22px;height:22px;border-radius:50%;background:var(--rose);color:white;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:.1rem;">3</span>
             <div style="flex:1;min-width:0;">
-              <textarea onchange="updateThreePointText(2,this.value)" placeholder="Point important n°3…" style="width:100%;min-height:44px;resize:vertical;border:1px solid var(--ivory-deep);border-radius:var(--radius-sm);padding:.45rem .6rem;font-family:&#39;DM Sans&#39;,sans-serif;font-size:.82rem;color:var(--ink);background:white;"></textarea>
+              <textarea onchange="updateThreePointText(2,this.value)" placeholder="Point important n°3…" style="width:100%;min-height:44px;resize:vertical;border:1px solid var(--ivory-deep);border-radius:var(--radius-sm);padding:.45rem .6rem;font-family:'DM Sans',sans-serif;font-size:.82rem;color:var(--ink);background:white;"></textarea>
             </div>
             <div style="display:flex;flex-direction:column;gap:.3rem;flex-shrink:0;">
               <button onclick="toggleThreePointDone(2)" class="btn btn-sm" style="background:var(--teal);color:white;padding:.35rem .7rem;font-size:.68rem;">✓ Valider</button>
@@ -2739,48 +2744,83 @@
           <div class="card-body" style="flex:1;">
             
             
-        <div class="task-item  task-blink-red" style="margin-bottom:.5rem;">
-          <div class="task-tooltip">&gt;3 jours</div>
+        <div class="task-item  " style="margin-bottom:.5rem;">
+          
           <div style="display:flex;align-items:flex-start;gap:.6rem;">
             <div style="flex:1;min-width:0;">
               <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-                <input type="text" value="VOITURE" onchange="updateTaskText(267,this.value,&#39;input&#39;)" placeholder="Nouvelle tâche…" class="task-text-input">
+                <input type="text" value="SERIE 2" onchange="updateTaskText(440,this.value,'input')" placeholder="Nouvelle tâche…" class="task-text-input">
                 <div style="display:flex;align-items:center;gap:.3rem;">
-                  <div class="sticker sticker-3" onclick="removeStickerFromTask(267,&#39;input&#39;, event)" style="cursor:pointer;">3</div>
-                  <button onclick="toggleStar(267,&#39;input&#39;, event)" class="star-btn star-inactive">☆</button>
+                  <div class="sticker sticker-empty" onclick="applyStickerToTask(440,'input', event)" style="cursor:pointer;">+</div>
+                  <button onclick="toggleStar(440,'input', event)" class="star-btn star-inactive">☆</button>
                 </div>
               </div>
               <div class="task-meta">
-                <span class="tag tag-cat">VOITURE</span>
-                <span class="task-total-points" title="Somme des points des sous-tâches">🏆 1 pts</span>
-                <span class="tag tag-date" style="background:#fef2f2;color:var(--danger);">⏱ 10 jours</span>
+                <span class="tag tag-cat">SPORT</span>
+                <span class="task-total-points" title="Somme des points des sous-tâches">🏆 2 pts</span>
+                
               </div>
               
-              <div class="tag tag-date" style="margin-top:.25rem;display:block;">Début · Lundi 31 Août à 16h25</div>
+              <div class="tag tag-date" style="margin-top:.25rem;display:block;">Début · Mercredi 16 Septembre à 10h41</div>
               
               
-              <div class="tag tag-date" style="display:block;background:var(--gold-pale);color:var(--gold);">Rallongé: JUST DO IT !</div>
+              
               
             </div>
             <div class="task-actions">
               
-                <button onclick="toggleTaskSubtasks(267, event)" id="btn-task-subtasks-267" class="btn btn-ghost btn-icon-sm" title="Sous-tâches"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon "><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                <button onclick="addSubtask(267, event)" class="btn btn-subtle btn-icon-sm" title="Ajouter sous-tâche" style="font-size:.8rem;">📋</button>
-                <button onclick="moveToProgress(267, event)" class="btn btn-icon-sm" style="background:var(--slate-pale);color:var(--slate);" title="In Progress">⚡</button>
-                <button onclick="moveToDone(267,false, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
+                <button onclick="toggleTaskSubtasks(440, event)" id="btn-task-subtasks-440" class="btn btn-ghost btn-icon-sm" title="Sous-tâches"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon "><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                <button onclick="addSubtask(440, event)" class="btn btn-subtle btn-icon-sm" title="Ajouter sous-tâche" style="font-size:.8rem;">📋</button>
+                <button onclick="moveToProgress(440, event)" class="btn btn-icon-sm" style="background:var(--slate-pale);color:var(--slate);" title="In Progress">⚡</button>
+                <button onclick="moveToDone(440,false, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
               
             </div>
           </div>
-          <div id="taskSubtasks-267" class="subtasks-container collapsed">
+          <div id="taskSubtasks-440" class="subtasks-container collapsed">
             
               <div style="margin-top:.6rem;margin-left:.8rem;padding-left:.75rem;border-left:2px solid var(--ivory-deep);display:flex;flex-direction:column;gap:.3rem;">
                 <div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="TABLEAU BORD POUSSIERES" onchange="updateSubtaskText(267,272,this.value)" class="subtask-input">
-                           <select onchange="updateSubtaskPoints(267,272,this.value,&#39;input&#39;)" class="subtask-points-select">
+                    <input type="text" value="POMPES 1" onchange="updateSubtaskText(440,441,this.value)" class="subtask-input">
+                           <select onchange="updateSubtaskPoints(440,441,this.value,'input')" class="subtask-points-select">
+                             <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
+                           </select>
+                           <button onclick="deleteSubtask(440,441, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
+                  </div><div class="subtask-row" style="">
+                    <span class="subtask-connector">└</span>
+                    <input type="text" value="ABDOS" onchange="updateSubtaskText(440,442,this.value)" class="subtask-input">
+                           <select onchange="updateSubtaskPoints(440,442,this.value,'input')" class="subtask-points-select">
+                             <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
+                           </select>
+                           <button onclick="deleteSubtask(440,442, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
+                  </div><div class="subtask-row" style="">
+                    <span class="subtask-connector">└</span>
+                    <input type="text" value="POMPES 2" onchange="updateSubtaskText(440,443,this.value)" class="subtask-input">
+                           <select onchange="updateSubtaskPoints(440,443,this.value,'input')" class="subtask-points-select">
+                             <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
+                           </select>
+                           <button onclick="deleteSubtask(440,443, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
+                  </div><div class="subtask-row" style="">
+                    <span class="subtask-connector">└</span>
+                    <input type="text" value="GAINNAGE" onchange="updateSubtaskText(440,444,this.value)" class="subtask-input">
+                           <select onchange="updateSubtaskPoints(440,444,this.value,'input')" class="subtask-points-select">
+                             <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
+                           </select>
+                           <button onclick="deleteSubtask(440,444, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
+                  </div><div class="subtask-row" style="">
+                    <span class="subtask-connector">└</span>
+                    <input type="text" value="ANNEAUX" onchange="updateSubtaskText(440,445,this.value)" class="subtask-input">
+                           <select onchange="updateSubtaskPoints(440,445,this.value,'input')" class="subtask-points-select">
                              <option value="0">0 pts</option><option value="1" selected="">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="deleteSubtask(267,272, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
+                           <button onclick="deleteSubtask(440,445, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
+                  </div><div class="subtask-row" style="">
+                    <span class="subtask-connector">└</span>
+                    <input type="text" value="JUMPS" onchange="updateSubtaskText(440,446,this.value)" class="subtask-input">
+                           <select onchange="updateSubtaskPoints(440,446,this.value,'input')" class="subtask-points-select">
+                             <option value="0">0 pts</option><option value="1" selected="">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
+                           </select>
+                           <button onclick="deleteSubtask(440,446, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
                   </div>
               </div>
             
@@ -2814,21 +2854,21 @@
           <div class="card-body" style="flex:1;">
             
             
-        <div class="task-item  task-blink-violet" style="margin-bottom:.5rem;">
-          <div class="task-tooltip">&gt;9h</div>
+        <div class="task-item  task-blink-orange" style="margin-bottom:.5rem;">
+          <div class="task-tooltip">&gt;2 jours</div>
           <div style="display:flex;align-items:flex-start;gap:.6rem;">
             <div style="flex:1;min-width:0;">
               <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-                <input type="text" value="RANGEMENTS" onchange="updateTaskText(335,this.value,&#39;progress&#39;)" placeholder="Nouvelle tâche…" class="task-text-input">
+                <input type="text" value="RANGEMENTS" onchange="updateTaskText(335,this.value,'progress')" placeholder="Nouvelle tâche…" class="task-text-input">
                 <div style="display:flex;align-items:center;gap:.3rem;">
-                  <div class="sticker sticker-empty" onclick="applyStickerToTask(335,&#39;progress&#39;, event)" style="cursor:pointer;">+</div>
-                  <button onclick="toggleStar(335,&#39;progress&#39;, event)" class="star-btn star-inactive">☆</button>
+                  <div class="sticker sticker-empty" onclick="applyStickerToTask(335,'progress', event)" style="cursor:pointer;">+</div>
+                  <button onclick="toggleStar(335,'progress', event)" class="star-btn star-inactive">☆</button>
                 </div>
               </div>
               <div class="task-meta">
                 <span class="tag tag-cat">MAISON</span>
                 <span class="task-total-points" title="Somme des points des sous-tâches">🏆 1 pts</span>
-                
+                <span class="tag tag-date" style="background:transparent;color:var(--ink-muted);">⏱ 2 jours</span>
               </div>
               
               <div class="tag tag-date" style="margin-top:.25rem;display:block;">Début · Mercredi 2 Septembre à 11h28</div>
@@ -2850,7 +2890,7 @@
                 <div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
                     <input type="text" value="ENTREE" onchange="updateSubtaskText(335,340,this.value)" class="subtask-input ">
-                           <select onchange="updateSubtaskPoints(335,340,this.value,&#39;progress&#39;)" class="subtask-points-select">
+                           <select onchange="updateSubtaskPoints(335,340,this.value,'progress')" class="subtask-points-select">
                              <option value="0">0 pts</option><option value="1" selected="">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
                            <button onclick="toggleSubtaskComplete(335,340, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
@@ -2860,15 +2900,15 @@
           </div>
         </div>
       
-        <div class="task-item  task-blink-blue" style="margin-bottom:.5rem;">
-          <div class="task-tooltip">&gt;6h</div>
+        <div class="task-item  " style="margin-bottom:.5rem;">
+          
           <div style="display:flex;align-items:flex-start;gap:.6rem;">
             <div style="flex:1;min-width:0;">
               <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-                <input type="text" value="SERIE 1" onchange="updateTaskText(426,this.value,&#39;progress&#39;)" placeholder="Nouvelle tâche…" class="task-text-input">
+                <input type="text" value="SERIE 1" onchange="updateTaskText(433,this.value,'progress')" placeholder="Nouvelle tâche…" class="task-text-input">
                 <div style="display:flex;align-items:center;gap:.3rem;">
-                  <div class="sticker sticker-empty" onclick="applyStickerToTask(426,&#39;progress&#39;, event)" style="cursor:pointer;">+</div>
-                  <button onclick="toggleStar(426,&#39;progress&#39;, event)" class="star-btn star-inactive">☆</button>
+                  <div class="sticker sticker-empty" onclick="applyStickerToTask(433,'progress', event)" style="cursor:pointer;">+</div>
+                  <button onclick="toggleStar(433,'progress', event)" class="star-btn star-inactive">☆</button>
                 </div>
               </div>
               <div class="task-meta">
@@ -2877,64 +2917,64 @@
                 
               </div>
               
-              <div class="tag tag-date" style="margin-top:.25rem;display:block;">Début · Lundi 14 Septembre à 8h55</div>
-              <div class="tag tag-date" style="display:block;">En cours · Lundi 14 Septembre à 8h55</div>
+              <div class="tag tag-date" style="margin-top:.25rem;display:block;">Début · Mercredi 16 Septembre à 10h41</div>
+              <div class="tag tag-date" style="display:block;">En cours · Mercredi 16 Septembre à 10h41</div>
               
               
               
             </div>
             <div class="task-actions">
               
-                <button onclick="toggleTaskSubtasks(426, event)" id="btn-task-subtasks-426" class="btn btn-ghost btn-icon-sm" title="Sous-tâches"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon "><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                <button onclick="moveToDone(426,true, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
+                <button onclick="toggleTaskSubtasks(433, event)" id="btn-task-subtasks-433" class="btn btn-ghost btn-icon-sm" title="Sous-tâches"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon rotated"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                <button onclick="moveToDone(433,true, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
               
             </div>
           </div>
-          <div id="taskSubtasks-426" class="subtasks-container collapsed">
+          <div id="taskSubtasks-433" class="subtasks-container expanded">
             
               <div style="margin-top:.6rem;margin-left:.8rem;padding-left:.75rem;border-left:2px solid var(--ivory-deep);display:flex;flex-direction:column;gap:.3rem;">
                 <div class="subtask-row" style="opacity:.6">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="POMPES 1" onchange="updateSubtaskText(426,427,this.value)" class="subtask-input text-muted">
-                           <select onchange="updateSubtaskPoints(426,427,this.value,&#39;progress&#39;)" class="subtask-points-select">
+                    <input type="text" value="POMPES 1" onchange="updateSubtaskText(433,434,this.value)" class="subtask-input text-muted">
+                           <select onchange="updateSubtaskPoints(433,434,this.value,'progress')" class="subtask-points-select">
                              <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="toggleSubtaskComplete(426,427, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Toggle">✓</button>
-                  </div><div class="subtask-row" style="opacity:.6">
-                    <span class="subtask-connector">└</span>
-                    <input type="text" value="ABDOS" onchange="updateSubtaskText(426,428,this.value)" class="subtask-input text-muted">
-                           <select onchange="updateSubtaskPoints(426,428,this.value,&#39;progress&#39;)" class="subtask-points-select">
-                             <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
-                           </select>
-                           <button onclick="toggleSubtaskComplete(426,428, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Toggle">✓</button>
-                  </div><div class="subtask-row" style="opacity:.6">
-                    <span class="subtask-connector">└</span>
-                    <input type="text" value="POMPES 2" onchange="updateSubtaskText(426,429,this.value)" class="subtask-input text-muted">
-                           <select onchange="updateSubtaskPoints(426,429,this.value,&#39;progress&#39;)" class="subtask-points-select">
-                             <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
-                           </select>
-                           <button onclick="toggleSubtaskComplete(426,429, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Toggle">✓</button>
+                           <button onclick="toggleSubtaskComplete(433,434, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Toggle">✓</button>
                   </div><div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="GAINNAGE" onchange="updateSubtaskText(426,430,this.value)" class="subtask-input ">
-                           <select onchange="updateSubtaskPoints(426,430,this.value,&#39;progress&#39;)" class="subtask-points-select">
+                    <input type="text" value="ABDOS" onchange="updateSubtaskText(433,435,this.value)" class="subtask-input ">
+                           <select onchange="updateSubtaskPoints(433,435,this.value,'progress')" class="subtask-points-select">
                              <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="toggleSubtaskComplete(426,430, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
+                           <button onclick="toggleSubtaskComplete(433,435, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
                   </div><div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="ANNEAUX" onchange="updateSubtaskText(426,431,this.value)" class="subtask-input ">
-                           <select onchange="updateSubtaskPoints(426,431,this.value,&#39;progress&#39;)" class="subtask-points-select">
+                    <input type="text" value="POMPES 2" onchange="updateSubtaskText(433,436,this.value)" class="subtask-input ">
+                           <select onchange="updateSubtaskPoints(433,436,this.value,'progress')" class="subtask-points-select">
+                             <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
+                           </select>
+                           <button onclick="toggleSubtaskComplete(433,436, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
+                  </div><div class="subtask-row" style="">
+                    <span class="subtask-connector">└</span>
+                    <input type="text" value="GAINNAGE" onchange="updateSubtaskText(433,437,this.value)" class="subtask-input ">
+                           <select onchange="updateSubtaskPoints(433,437,this.value,'progress')" class="subtask-points-select">
+                             <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
+                           </select>
+                           <button onclick="toggleSubtaskComplete(433,437, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
+                  </div><div class="subtask-row" style="">
+                    <span class="subtask-connector">└</span>
+                    <input type="text" value="ANNEAUX" onchange="updateSubtaskText(433,438,this.value)" class="subtask-input ">
+                           <select onchange="updateSubtaskPoints(433,438,this.value,'progress')" class="subtask-points-select">
                              <option value="0">0 pts</option><option value="1" selected="">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="toggleSubtaskComplete(426,431, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
+                           <button onclick="toggleSubtaskComplete(433,438, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
                   </div><div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="JUMPS" onchange="updateSubtaskText(426,432,this.value)" class="subtask-input ">
-                           <select onchange="updateSubtaskPoints(426,432,this.value,&#39;progress&#39;)" class="subtask-points-select">
+                    <input type="text" value="JUMPS" onchange="updateSubtaskText(433,439,this.value)" class="subtask-input ">
+                           <select onchange="updateSubtaskPoints(433,439,this.value,'progress')" class="subtask-points-select">
                              <option value="0">0 pts</option><option value="1" selected="">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="toggleSubtaskComplete(426,432, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
+                           <button onclick="toggleSubtaskComplete(433,439, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
                   </div>
               </div>
             
@@ -2973,6 +3013,48 @@
           <div style="display:flex;align-items:flex-start;gap:.6rem;">
             <div style="flex:1;min-width:0;">
               <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
+                <span class="task-text-done">VOITURE</span>
+                <div style="display:flex;align-items:center;gap:.3rem;">
+                  
+                  
+                </div>
+              </div>
+              <div class="task-meta">
+                <span class="tag tag-cat">VOITURE</span>
+                <span class="task-total-points" title="Somme des points des sous-tâches">🏆 1 pts</span>
+                
+              </div>
+              
+              
+              <div class="tag tag-date" style="display:block;">En cours · Mercredi 16 Septembre à 10h41</div>
+              <div class="tag tag-date" style="display:block;">Fin · Mercredi 16 Septembre à 10h41</div>
+              <div class="tag tag-date" style="display:block;background:var(--gold-pale);color:var(--gold);">Rallongé: JUST DO IT !</div>
+              
+            </div>
+            <div class="task-actions">
+              
+                <button onclick="deleteTask(267, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">🗑</button>
+              
+            </div>
+          </div>
+          <div id="taskSubtasks-267" class="subtasks-container collapsed">
+            
+              <div style="margin-top:.6rem;margin-left:.8rem;padding-left:.75rem;border-left:2px solid var(--ivory-deep);display:flex;flex-direction:column;gap:.3rem;">
+                <div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">TABLEAU BORD POUSSIERES</span>
+                         <span class="subtask-points-badge">1 pts</span>
+                  </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="task-item is-done " style="margin-bottom:.5rem;">
+          
+          <div style="display:flex;align-items:flex-start;gap:.6rem;">
+            <div style="flex:1;min-width:0;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
                 <span class="task-text-done">SERIE 1</span>
                 <div style="display:flex;align-items:center;gap:.3rem;">
                   
@@ -2986,18 +3068,18 @@
               </div>
               
               
-              <div class="tag tag-date" style="display:block;">En cours · Dimanche 13 Septembre à 22h04</div>
-              <div class="tag tag-date" style="display:block;">Fin · Lundi 14 Septembre à 8h55</div>
+              <div class="tag tag-date" style="display:block;">En cours · Lundi 14 Septembre à 8h55</div>
+              <div class="tag tag-date" style="display:block;">Fin · Mercredi 16 Septembre à 10h41</div>
               
               
             </div>
             <div class="task-actions">
               
-                <button onclick="deleteTask(414, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">🗑</button>
+                <button onclick="deleteTask(426, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">🗑</button>
               
             </div>
           </div>
-          <div id="taskSubtasks-414" class="subtasks-container collapsed">
+          <div id="taskSubtasks-426" class="subtasks-container collapsed">
             
               <div style="margin-top:.6rem;margin-left:.8rem;padding-left:.75rem;border-left:2px solid var(--ivory-deep);display:flex;flex-direction:column;gap:.3rem;">
                 <div class="subtask-row" style="opacity:.6">
@@ -3023,48 +3105,6 @@
                   </div><div class="subtask-row" style="opacity:.6">
                     <span class="subtask-connector">└</span>
                     <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">JUMPS</span>
-                         <span class="subtask-points-badge">1 pts</span>
-                  </div>
-              </div>
-            
-          </div>
-        </div>
-      
-        <div class="task-item is-done " style="margin-bottom:.5rem;">
-          
-          <div style="display:flex;align-items:flex-start;gap:.6rem;">
-            <div style="flex:1;min-width:0;">
-              <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-                <span class="task-text-done">MICHAEL</span>
-                <div style="display:flex;align-items:center;gap:.3rem;">
-                  
-                  
-                </div>
-              </div>
-              <div class="task-meta">
-                <span class="tag tag-cat">PERSONNEL</span>
-                <span class="task-total-points" title="Somme des points des sous-tâches">🏆 1 pts</span>
-                
-              </div>
-              
-              
-              <div class="tag tag-date" style="display:block;">En cours · Lundi 14 Septembre à 8h55</div>
-              <div class="tag tag-date" style="display:block;">Fin · Lundi 14 Septembre à 8h55</div>
-              
-              
-            </div>
-            <div class="task-actions">
-              
-                <button onclick="deleteTask(422, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">🗑</button>
-              
-            </div>
-          </div>
-          <div id="taskSubtasks-422" class="subtasks-container collapsed">
-            
-              <div style="margin-top:.6rem;margin-left:.8rem;padding-left:.75rem;border-left:2px solid var(--ivory-deep);display:flex;flex-direction:column;gap:.3rem;">
-                <div class="subtask-row" style="opacity:.6">
-                    <span class="subtask-connector">└</span>
-                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">ONGLES</span>
                          <span class="subtask-points-badge">1 pts</span>
                   </div>
               </div>
@@ -3137,6 +3177,7 @@
 
     /* ─────────────────────── VERSIONS DATA (v93) ─────────────────────── */
     const versionsData = [
+      { number: "v2.2", date: "16 Sept 2026", features: ["📅 DURÉE DANS DATES IMPORTANTES — Ajout de champs optionnels « Date de fin » et « Durée » pour les événements sur plusieurs jours (ex : Vacances Toussaints du 26/10 au 30/10)", "️ La durée s'affiche dans la liste des dates importantes, sans heures obligatoires"] },
       { number: "v2.1", date: "14 Sept 2026", features: ["☁️ SUPABASE — Le bouton Sauvegarder exporte désormais vers localStorage ET Supabase ; le bouton Cloud importe depuis Supabase", "🔧 Configuration Supabase requise : table `exportcloud` avec colonnes `id` (int, primary key), `data` (text) et `created_at`", "⚙️ Paramètres à configurer : SUPABASE_URL et SUPABASE_ANON_KEY"] },
       { number: "v2.0", date: "14 Sept 2026", features: ["☁️ BOUTON CLOUD — Nouveau bouton Cloud dans la barre d'en-tête, à côté de Restaurer/Sauvegarder/Reset ; désactivé par défaut (grisé), cliquable pour basculer entre actif (couleur slate active) et inactif (grisé)", "🔜 PRÉPARATION SUPABASE — Le bouton est prêt pour l'intégration future avec Supabase : export vers le cloud et import depuis le cloud"] },
       { number: "v1.9", date: "7 Sept 2026", features: ["❗ TÂCHES OBLIGATOIRES (PRO et PRIVEE) — Les tâches actives apparaissent désormais en haut de la liste (triées par date), et les tâches passées (archivées) sont reléguées en bas"] },
@@ -3802,7 +3843,7 @@
       const h=now.getHours(), min=now.getMinutes().toString().padStart(2,'0');
       const filename = `Planner_sauvegarde_GLOBALE_${d}-${m}-${y}_${h}h${min}.txt`;
 
-      let content = `========================================\nSAUVEGARDE COMPLETE DAILY PLANNER\nVersion v2.1 - Export global (Supabase) : PRO + PRIVEE + TRACKING (Tâches obligatoires triées : actives en haut)\nDate: ${d}/${m}/${y} à ${h}:${min}\n========================================\n`;
+      let content = `========================================\nSAUVEGARDE COMPLETE DAILY PLANNER\nVersion v2.2 - Export global (Supabase) : PRO + PRIVEE + TRACKING (Tâches obligatoires triées : actives en haut)\nDate: ${d}/${m}/${y} à ${h}:${min}\n========================================\n`;
 
       const writeModeSection = (modeLabel, modeData) => {
         let s = `\n\n════════ MODE ${modeLabel} ════════\n\n`;
@@ -4105,7 +4146,7 @@
         const now2 = new Date();
         const d2=now2.getDate(), m2=now2.getMonth()+1, y2=now2.getFullYear();
         const h2=now2.getHours(), min2=now2.getMinutes().toString().padStart(2,'0');
-        const supabaseContent = `========================================\nSAUVEGARDE COMPLETE DAILY PLANNER\nVersion v2.1 - Export global (Supabase)\nDate: ${d2}/${m2}/${y2} à ${h2}:${min2}\n========================================\n` + gatherFullBackupJSONString();
+        const supabaseContent = `========================================\nSAUVEGARDE COMPLETE DAILY PLANNER\nVersion v2.2 - Export global (Supabase)\nDate: ${d2}/${m2}/${y2} à ${h2}:${min2}\n========================================\n` + gatherFullBackupJSONString();
         exportToSupabase(supabaseContent).then(success => {
           if(success) alert('✅ Sauvegarde globale effectuée !\n• Téléchargement local OK\n• Export Supabase OK');
           else alert('❌ Sauvegarde locale OK, mais export Supabase refusé.\n\nVérifiez les policies RLS UPDATE et INSERT de la table exportcloud pour le rôle anon.\n\nSi ce message reste ancien, rechargez la page publiée avec Ctrl + F5.');
@@ -4481,16 +4522,40 @@
       const dateInput = document.getElementById('newImportantDateInput');
       const timeInput = document.getElementById('newImportantTimeInput');
       const textInput = document.getElementById('newImportantDateText');
+      const endDateInput = document.getElementById('newImportantEndDateInput');
       if (!dateInput || !textInput) return;
       const isoDate = dateInput.value;
       const timeVal = timeInput ? timeInput.value : '';
+      const isoEndDate = endDateInput ? endDateInput.value : '';
       const text = textInput.value.trim();
       if (!isoDate) { alert('Veuillez choisir une date.'); return; }
       if (!text) { alert('Veuillez décrire l\'événement.'); return; }
+      
+      // Calculate duration if end date is provided
+      let durationDays = null;
+      let durationLabel = '';
+      if (isoEndDate && isoEndDate > isoDate) {
+        const start = new Date(isoDate);
+        const end = new Date(isoEndDate);
+        const diffTime = Math.abs(end - start);
+        durationDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1; // +1 to include both start and end days
+        durationLabel = `(${durationDays} jour${durationDays > 1 ? 's' : ''})`;
+      }
+      
       const [y,mo,d] = isoDate.split('-').map(Number);
       const frLabel = formatFrenchDateLabel(new Date(y, mo-1, d));
       const timeLabel = timeVal ? timeVal.replace(':','h') : '';
-      importantDates.push({ id: 'd'+Date.now()+Math.floor(Math.random()*1000), isoDate, time: timeVal, timeLabel, text, frLabel });
+      importantDates.push({ 
+        id: 'd'+Date.now()+Math.floor(Math.random()*1000), 
+        isoDate, 
+        isoEndDate, 
+        time: timeVal, 
+        timeLabel, 
+        text, 
+        frLabel,
+        durationDays,
+        durationLabel
+      });
       importantDates.sort((a,b) => {
         const aPast = getDaysRemaining(a.isoDate) < 0 ? 1 : 0;
         const bPast = getDaysRemaining(b.isoDate) < 0 ? 1 : 0;
@@ -5578,12 +5643,16 @@
                   <input type="date" id="newImportantDateInput" class="form-input">
                 </div>
                 <div class="form-group" style="margin:0;flex:0 0 auto;">
+                  <label class="form-label">Date de fin (optionnel)</label>
+                  <input type="date" id="newImportantEndDateInput" class="form-input">
+                </div>
+                <div class="form-group" style="margin:0;flex:0 0 auto;">
                   <label class="form-label">Heure (optionnel)</label>
                   <input type="time" id="newImportantTimeInput" class="form-input" style="max-width:110px;">
                 </div>
                 <div class="form-group" style="margin:0;flex:1 1 180px;">
                   <label class="form-label">Événement *</label>
-                  <input type="text" id="newImportantDateText" class="form-input" placeholder="Ex : Emmener voiture Garage" onkeydown="if(event.key==='Enter'){addImportantDate();}">
+                  <input type="text" id="newImportantDateText" class="form-input" placeholder="Ex : Vacances Toussaints" onkeydown="if(event.key==='Enter'){addImportantDate();}">
                 </div>
                 <button onclick="addImportantDate()" class="btn btn-success" style="flex-shrink:0;">＋ Ajouter</button>
               </div>
@@ -5605,6 +5674,7 @@
                       <div class="important-date-item idi-${level}">
                         <div>
                           <div class="important-date-text">${escapeHtml(dt.frLabel)}${dt.timeLabel?' à '+escapeHtml(dt.timeLabel):''} : ${escapeHtml(dt.text)}</div>
+                          ${dt.durationLabel ? `<div class="date-duration-display">📅 Durée : ${dt.durationLabel}</div>` : ''}
                           <div class="important-date-countdown">${countdown}</div>
                         </div>
                         <button onclick="deleteImportantDate('${dt.id}')" class="btn btn-danger-ghost btn-sm" style="flex-shrink:0;">✕</button>
@@ -5643,7 +5713,7 @@
               </div>
             </div>
             <div style="padding:.9rem 1.8rem;border-top:1px solid var(--ivory-deep);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
-              <span style="font-size:.7rem;color:var(--ink-muted);">Daily Planner · Édition v2.1 · Tâches obligatoires triées (passées en bas) · 2026</span>
+              <span style="font-size:.7rem;color:var(--ink-muted);">Daily Planner · Édition v2.2 · Tâches obligatoires triées (passées en bas) · 2026</span>
               <div style="display:flex;gap:.4rem;">
                 <button onclick="document.getElementById('infoModalScroll').scrollTo({top:0,behavior:'smooth'})" class="btn btn-ghost btn-sm" style="font-size:.75rem;padding:.3rem .7rem;">↑ Haut</button>
                 <button onclick="document.getElementById('infoModalScroll').scrollTo({top:99999,behavior:'smooth'})" class="btn btn-ghost btn-sm" style="font-size:.75rem;padding:.3rem .7rem;">↓ Bas</button>
@@ -5782,7 +5852,7 @@
                 <button onclick="switchMode('TRACKING')" class="mode-btn active-con">Tracking</button>
               </div>
               <div style="display:flex;align-items:center;">
-                <h1 class="app-title">Daily Planner <span class="version">v2.1</span></h1>
+                <h1 class="app-title">Daily Planner <span class="version">v2.2</span></h1>
                 <div class="info-btn" onclick="toggleInfoModal()" title="Informations sur les versions">ⓘ</div>
               </div>
             </header>
@@ -5801,7 +5871,7 @@
               <button onclick="switchMode('TRACKING')" class="mode-btn ${isTrk?'active-con':''}">Tracking</button>
             </div>
             <div style="display:flex;align-items:center;">
-              <h1 class="app-title">Daily Planner <span class="version">v2.1</span></h1>
+              <h1 class="app-title">Daily Planner <span class="version">v2.2</span></h1>
               <div class="info-btn" onclick="toggleInfoModal()" title="Informations sur les versions">ⓘ</div>
             </div>
             <div class="datetime-badge">${formatDateTime()}${lastSaveTime?` <span style="margin:0 .4rem;opacity:.4;">·</span> <span class="save-dot"></span> Sauvegardé ${lastSaveTime}`:''}</div><div class="header-meta">${(()=>{const cs=getCalendarIconState();return `<button onclick="toggleImportantDatesModal()" class="calendar-icon-btn ${cs.level!=='none'?'cal-'+cs.level:''}" title="Dates importantes">📅${cs.count>0?`<span class="cal-badge">${cs.count}</span>`:''}</button>`;})()}${(()=>{const ms=getMandatoryIconState();return `<button onclick="toggleMandatoryModal()" class="mandatory-icon-btn ${ms.level!=='none'?'mand-'+ms.level:''}" title="Tâches obligatoires">❗${ms.count>0?`<span class="mand-badge">${ms.count}</span>`:''}</button>`;})()}<button onclick="restoreFromBackup()" class="btn btn-ghost">📂 Restaurer</button><button onclick="toggleCloudButton()" id="cloudBtn" class="btn btn-cloud" title="☁️ Cliquer pour importer depuis Supabase">☁️ Cloud</button><button onclick="saveToLocalStorage(true)" class="btn btn-success">💾 Sauvegarder</button><button onclick="resetAllTasks()" class="btn btn-danger">🔄 Reset</button></div>
@@ -5900,6 +5970,6 @@
         saveToLocalStorage(false, false);
       }
     });
-  </script><div class="sticker-info-tooltip" id="stickerInfoTooltip"></div><div class="sticker-info-tooltip" id="stickerInfoTooltip"></div>
+  </script><div class="sticker-info-tooltip" id="stickerInfoTooltip"></div><div class="sticker-info-tooltip" id="stickerInfoTooltip"></div><div class="sticker-info-tooltip" id="stickerInfoTooltip"></div>
 
 </body></html>
