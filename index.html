@@ -3926,28 +3926,43 @@
         'apikey': SUPABASE_ANON_KEY,
         'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
         'Content-Type': 'application/json',
-        // Un seul POST évite le GET + PATCH/POST qui est fragile dans les
-        // navigateurs mobiles et les WebViews.
-        'Prefer': 'resolution=merge-duplicates,return=minimal'
+        'Prefer': 'return=minimal'
       };
       const payload = {
         id: 1,
         data: backupContent
       };
       try {
-        const writeResponse = await fetch(`${SUPABASE_URL}/rest/v1/exportcloud?on_conflict=id`, {
-          method: 'POST',
+        // La ligne id=1 existe normalement déjà. PATCH évite alors d'exiger
+        // la policy INSERT, souvent absente alors que UPDATE est autorisé.
+        let writeResponse = await fetch(`${SUPABASE_URL}/rest/v1/exportcloud?id=eq.1`, {
+          method: 'PATCH',
           headers,
-          body: JSON.stringify(payload)
+          body: JSON.stringify({ data: payload.data })
         });
 
         if (writeResponse.ok) {
           console.log('✅ Sauvegarde Supabase réussie');
           return true;
         }
-        const writeError = await writeResponse.text();
-        console.error('❌ Erreur Supabase UPSERT:', writeResponse.status, writeError);
-        alert(`❌ Supabase refuse l'export (UPSERT, HTTP ${writeResponse.status}).\n\nLa sauvegarde locale a bien été conservée.\n\nDétail : ${writeError.substring(0, 240)}`);
+        const patchError = await writeResponse.text();
+        if (writeResponse.status === 404) {
+          writeResponse = await fetch(`${SUPABASE_URL}/rest/v1/exportcloud`, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify(payload)
+          });
+          if (writeResponse.ok) {
+            console.log('✅ Première sauvegarde Supabase créée');
+            return true;
+          }
+          const insertError = await writeResponse.text();
+          console.error('❌ Erreur Supabase INSERT:', writeResponse.status, insertError);
+          alert(`❌ Supabase refuse la création (INSERT, HTTP ${writeResponse.status}).\n\nLa sauvegarde locale a bien été conservée.\n\nDétail : ${insertError.substring(0, 240)}`);
+          return false;
+        }
+        console.error('❌ Erreur Supabase UPDATE:', writeResponse.status, patchError);
+        alert(`❌ Supabase refuse la sauvegarde (UPDATE, HTTP ${writeResponse.status}).\n\nLa sauvegarde locale a bien été conservée.\n\nDétail : ${patchError.substring(0, 240)}`);
         return false;
       } catch(e) {
         console.error('❌ Exception Supabase:', e);
@@ -4128,11 +4143,13 @@
         const h2=now2.getHours(), min2=now2.getMinutes().toString().padStart(2,'0');
         const supabaseContent = `========================================\nSAUVEGARDE COMPLETE DAILY PLANNER\nVersion v2.2 - Export global (Supabase)\nDate: ${d2}/${m2}/${y2} à ${h2}:${min2}\n========================================\n` + gatherFullBackupJSONString();
         const supabasePromise = exportToSupabase(supabaseContent);
-        // Le téléchargement reste directement lié au clic utilisateur,
-        // notamment sur iOS/Android qui peuvent bloquer un téléchargement
-        // lancé après un await.
-        createFullBackupFile();
+        const isIPhone = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+          (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        // Safari peut interrompre une requête volumineuse si le téléchargement
+        // démarre dans le même geste utilisateur. localStorage est déjà écrit.
+        if (!isIPhone) createFullBackupFile();
         supabasePromise.then(success => {
+          if (isIPhone) createFullBackupFile();
           if(success) alert('✅ Sauvegarde globale effectuée !\n• Téléchargement local OK\n• Export Supabase OK');
           else alert('❌ Sauvegarde locale OK, mais export Supabase refusé.\n\nVérifiez les policies RLS UPDATE et INSERT de la table exportcloud pour le rôle anon.\n\nSi ce message reste ancien, rechargez la page publiée avec Ctrl + F5.');
         });
