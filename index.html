@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0083)https://www-workspace.pagepop.cn/uid-55355119/daily-planner/Daily_Planner_v2.2.html -->
+<!-- saved from url=(0083)https://www-workspace.pagepop.cn/uid-55355119/daily-planner/Daily_Planner_v2.4.html -->
 <html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Planner · v2.2</title>
+  <title>Daily Planner · v2.4</title>
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-  <link href="./Daily Planner · v2.2_files/css2" rel="stylesheet">
+  <link href="./Daily Planner · v2.4_files/css2" rel="stylesheet">
   <style>
     /* ====== STYLES (inchangés) ====== */
     :root {
@@ -567,6 +567,36 @@
       font-weight: 400;
       color: var(--ink-muted);
       text-decoration: line-through;
+    }
+        .task-meta-with-actions {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: .35rem;
+      flex-wrap: wrap;
+    }
+    .task-meta-left {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      flex-wrap: wrap;
+      flex: 1;
+      min-width: 0;
+    }
+    .task-meta-actions {
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      margin-left: auto;
+    }
+    .task-title-row {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .task-title-full {
+      flex: 1;
+      min-width: 0;
     }
     .task-meta {
       display: flex;
@@ -1408,10 +1438,10 @@
               <button onclick="switchMode('TRACKING')" class="mode-btn ">Tracking</button>
             </div>
             <div style="display:flex;align-items:center;">
-              <h1 class="app-title">Daily Planner <span class="version">v2.2</span></h1>
+              <h1 class="app-title">Daily Planner <span class="version">v2.4</span></h1>
               <div class="info-btn" onclick="toggleInfoModal()" title="Informations sur les versions">ⓘ</div>
             </div>
-            <div class="datetime-badge">Mercredi 16 Septembre · 10h42 <span style="margin:0 .4rem;opacity:.4;">·</span> <span class="save-dot"></span> Sauvegardé 16/9/2026 à 10:42</div><div class="header-meta"><button onclick="toggleImportantDatesModal()" class="calendar-icon-btn cal-normal" title="Dates importantes">📅<span class="cal-badge">2</span></button><button onclick="toggleMandatoryModal()" class="mandatory-icon-btn " title="Tâches obligatoires">❗</button><button onclick="restoreFromBackup()" class="btn btn-ghost">📂 Restaurer</button><button onclick="toggleCloudButton()" id="cloudBtn" class="btn btn-cloud" title="☁️ Cliquer pour importer depuis Supabase">☁️ Cloud</button><button onclick="saveToLocalStorage(true)" class="btn btn-success">💾 Sauvegarder</button><button onclick="resetAllTasks()" class="btn btn-danger">🔄 Reset</button></div>
+            <div class="datetime-badge">Jeudi 17 Septembre · 15h58 <span style="margin:0 .4rem;opacity:.4;">·</span> <span class="save-dot"></span> Sauvegardé 17/9/2026 à 15:58</div><div class="header-meta"><button onclick="toggleImportantDatesModal()" class="calendar-icon-btn cal-normal" title="Dates importantes">📅<span class="cal-badge">2</span></button><button onclick="toggleMandatoryModal()" class="mandatory-icon-btn " title="Tâches obligatoires">❗</button><button onclick="restoreFromBackup()" class="btn btn-ghost">📂 Restaurer</button><button onclick="toggleCloudButton()" id="cloudBtn" class="btn btn-cloud" title="☁️ Cliquer pour importer depuis Supabase">☁️ Cloud</button><button onclick="saveToLocalStorage(true)" class="btn btn-success">💾 Sauvegarder</button><button onclick="manualTrackingExport()" class="btn" style="background:var(--teal);color:white;">📊 Tracking</button><button onclick="resetAllTasks()" class="btn btn-danger">🔄 Reset</button></div>
           </header>
 
             <div class="center-toggle"><button onclick="toggleLibraryDonut()" id="btn-library-donut-toggle" class="toggle-chevron-btn" title="Afficher/masquer librairie"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon rotated"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div>
@@ -2660,10 +2690,10 @@
           <div class="card-header-title">
             <span class="section-icon section-icon-teal">📊</span>
             <h2 class="card-title">Daily Avancement</h2>
-            <span class="count-badge">5</span>
+            <span class="count-badge">7</span>
           </div>
         </div><div class="card-body" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:.8rem;">
-        <svg width="280" height="280" viewBox="0 0 280 280"><circle cx="140" cy="140" r="95" fill="none" stroke="var(--ivory-deep)" stroke-width="54"></circle><g transform="rotate(-90 140 140)"><circle cx="140" cy="140" r="95" fill="none" stroke="var(--slate)" stroke-width="54" stroke-dasharray="116.38052083641215 480.5220833456486" stroke-dashoffset="0" stroke-linecap="butt"></circle><circle cx="140" cy="140" r="95" fill="none" stroke="var(--gold)" stroke-width="54" stroke-dasharray="235.7610416728243 361.14156250923645" stroke-dashoffset="-119.38052083641215" stroke-linecap="butt"></circle><circle cx="140" cy="140" r="95" fill="none" stroke="var(--teal)" stroke-width="54" stroke-dasharray="235.7610416728243 361.14156250923645" stroke-dashoffset="-358.14156250923645" stroke-linecap="butt"></circle></g><text x="195.83959896778495" y="56.14338553437999" text-anchor="middle" dominant-baseline="middle" font-family="'DM Mono',monospace" font-size="15" font-weight="700" fill="white">1</text><text x="195.83959896778495" y="72.14338553437999" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="9.5" font-weight="500" fill="rgba(255,255,255,.85)">20%</text><text x="195.83959896778495" y="209.85661446562" text-anchor="middle" dominant-baseline="middle" font-family="'DM Mono',monospace" font-size="15" font-weight="700" fill="white">2</text><text x="195.83959896778495" y="225.85661446562" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="9.5" font-weight="500" fill="rgba(255,255,255,.85)">40%</text><text x="49.649630951960404" y="103.64338553438" text-anchor="middle" dominant-baseline="middle" font-family="'DM Mono',monospace" font-size="15" font-weight="700" fill="white">2</text><text x="49.649630951960404" y="119.64338553438" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="9.5" font-weight="500" fill="rgba(255,255,255,.85)">40%</text><text x="140" y="130" text-anchor="middle" dominant-baseline="middle" font-family="'Cormorant Garamond',serif" font-size="46" font-weight="600" fill="var(--ink)">5</text><text x="140" y="156" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="11" fill="var(--ink-muted)" letter-spacing="1">TÂCHES</text></svg><div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;"><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--ink-muted);"><span style="width:10px;height:10px;border-radius:50%;background:var(--slate);display:inline-block;"></span>Input · 1</span><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--ink-muted);"><span style="width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block;"></span>In Progress · 2</span><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--ink-muted);"><span style="width:10px;height:10px;border-radius:50%;background:var(--teal);display:inline-block;"></span>Done · 2</span></div></div></div>
+        <svg width="280" height="280" viewBox="0 0 280 280"><circle cx="140" cy="140" r="95" fill="none" stroke="var(--ivory-deep)" stroke-width="54"></circle><g transform="rotate(-90 140 140)"><circle cx="140" cy="140" r="95" fill="none" stroke="var(--slate)" stroke-width="54" stroke-dasharray="82.27180059743723 514.6308035846234" stroke-dashoffset="0" stroke-linecap="butt"></circle><circle cx="140" cy="140" r="95" fill="none" stroke="var(--gold)" stroke-width="54" stroke-dasharray="167.54360119487447 429.3590029871863" stroke-dashoffset="-85.27180059743723" stroke-linecap="butt"></circle><circle cx="140" cy="140" r="95" fill="none" stroke="var(--teal)" stroke-width="54" stroke-dasharray="338.08720238974894 258.8154017923118" stroke-dashoffset="-255.81540179231172" stroke-linecap="butt"></circle></g><text x="181.218955216168" y="47.40795754927018" text-anchor="middle" dominant-baseline="middle" font-family="'DM Mono',monospace" font-size="15" font-weight="700" fill="white">1</text><text x="181.218955216168" y="63.40795754927018" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="9.5" font-weight="500" fill="rgba(255,255,255,.85)">14%</text><text x="232.61815165727324" y="154.13948872584987" text-anchor="middle" dominant-baseline="middle" font-family="'DM Mono',monospace" font-size="15" font-weight="700" fill="white">2</text><text x="232.61815165727324" y="170.13948872584987" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="9.5" font-weight="500" fill="rgba(255,255,255,.85)">29%</text><text x="47.381848342726784" y="154.13948872584996" text-anchor="middle" dominant-baseline="middle" font-family="'DM Mono',monospace" font-size="15" font-weight="700" fill="white">4</text><text x="47.381848342726784" y="170.13948872584996" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="9.5" font-weight="500" fill="rgba(255,255,255,.85)">57%</text><text x="140" y="130" text-anchor="middle" dominant-baseline="middle" font-family="'Cormorant Garamond',serif" font-size="46" font-weight="600" fill="var(--ink)">7</text><text x="140" y="156" text-anchor="middle" dominant-baseline="middle" font-family="'DM Sans',sans-serif" font-size="11" fill="var(--ink-muted)" letter-spacing="1">TÂCHES</text></svg><div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;"><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--ink-muted);"><span style="width:10px;height:10px;border-radius:50%;background:var(--slate);display:inline-block;"></span>Input · 1</span><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--ink-muted);"><span style="width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block;"></span>In Progress · 2</span><span style="display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;color:var(--ink-muted);"><span style="width:10px;height:10px;border-radius:50%;background:var(--teal);display:inline-block;"></span>Done · 4</span></div></div></div>
         <div class="card" id="card3Points" style="display: flex; flex-direction: column; align-self: stretch; overflow: hidden; height: 771px;">
           <div class="card-header">
             <div class="card-header-title">
@@ -2744,83 +2774,84 @@
           <div class="card-body" style="flex:1;">
             
             
-        <div class="task-item  " style="margin-bottom:.5rem;">
-          
+        <div class="task-item  task-blink-green" style="margin-bottom:.5rem;">
+          <div class="task-tooltip">&gt;3h</div>
           <div style="display:flex;align-items:flex-start;gap:.6rem;">
             <div style="flex:1;min-width:0;">
-              <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-                <input type="text" value="SERIE 2" onchange="updateTaskText(440,this.value,'input')" placeholder="Nouvelle tâche…" class="task-text-input">
-                <div style="display:flex;align-items:center;gap:.3rem;">
-                  <div class="sticker sticker-empty" onclick="applyStickerToTask(440,'input', event)" style="cursor:pointer;">+</div>
-                  <button onclick="toggleStar(440,'input', event)" class="star-btn star-inactive">☆</button>
+              <div class="task-title-row">
+                <input type="text" value="SERIE 2" onchange="updateTaskText(454,this.value,'input')" placeholder="Nouvelle tâche…" class="task-text-input task-title-full">
+              </div>
+              <div class="task-meta-with-actions">
+                <div class="task-meta-left">
+                  <span class="tag tag-cat">SPORT</span>
+                  <span class="task-total-points" title="Somme des points des sous-tâches">🏆 2 pts</span>
+                  
+                </div>
+                <div class="task-meta-actions">
+                  <div class="sticker sticker-empty" onclick="applyStickerToTask(454,'input', event)" style="cursor:pointer;">+</div>
+                  <button onclick="toggleStar(454,'input', event)" class="star-btn star-inactive">☆</button>
+                  
+                    <button onclick="toggleTaskSubtasks(454, event)" id="btn-task-subtasks-454" class="btn btn-ghost btn-icon-sm" title="Sous-tâches"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon "><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <button onclick="addSubtask(454, event)" class="btn btn-subtle btn-icon-sm" title="Ajouter sous-tâche" style="font-size:.8rem;">📋</button>
+                    <button onclick="moveToProgress(454, event)" class="btn btn-icon-sm" style="background:var(--slate-pale);color:var(--slate);" title="In Progress">⚡</button>
+                    <button onclick="moveToDone(454,false, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
+                  
                 </div>
               </div>
-              <div class="task-meta">
-                <span class="tag tag-cat">SPORT</span>
-                <span class="task-total-points" title="Somme des points des sous-tâches">🏆 2 pts</span>
-                
-              </div>
               
-              <div class="tag tag-date" style="margin-top:.25rem;display:block;">Début · Mercredi 16 Septembre à 10h41</div>
+              <div class="tag tag-date" style="margin-top:.25rem;display:block;">Début · Jeudi 17 Septembre à 12h43</div>
               
               
               
               
             </div>
-            <div class="task-actions">
-              
-                <button onclick="toggleTaskSubtasks(440, event)" id="btn-task-subtasks-440" class="btn btn-ghost btn-icon-sm" title="Sous-tâches"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon "><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                <button onclick="addSubtask(440, event)" class="btn btn-subtle btn-icon-sm" title="Ajouter sous-tâche" style="font-size:.8rem;">📋</button>
-                <button onclick="moveToProgress(440, event)" class="btn btn-icon-sm" style="background:var(--slate-pale);color:var(--slate);" title="In Progress">⚡</button>
-                <button onclick="moveToDone(440,false, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
-              
-            </div>
+
           </div>
-          <div id="taskSubtasks-440" class="subtasks-container collapsed">
+          <div id="taskSubtasks-454" class="subtasks-container collapsed">
             
               <div style="margin-top:.6rem;margin-left:.8rem;padding-left:.75rem;border-left:2px solid var(--ivory-deep);display:flex;flex-direction:column;gap:.3rem;">
                 <div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="POMPES 1" onchange="updateSubtaskText(440,441,this.value)" class="subtask-input">
-                           <select onchange="updateSubtaskPoints(440,441,this.value,'input')" class="subtask-points-select">
+                    <input type="text" value="POMPES 1" onchange="updateSubtaskText(454,455,this.value)" class="subtask-input">
+                           <select onchange="updateSubtaskPoints(454,455,this.value,'input')" class="subtask-points-select">
                              <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="deleteSubtask(440,441, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
+                           <button onclick="deleteSubtask(454,455, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
                   </div><div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="ABDOS" onchange="updateSubtaskText(440,442,this.value)" class="subtask-input">
-                           <select onchange="updateSubtaskPoints(440,442,this.value,'input')" class="subtask-points-select">
+                    <input type="text" value="ABDOS" onchange="updateSubtaskText(454,456,this.value)" class="subtask-input">
+                           <select onchange="updateSubtaskPoints(454,456,this.value,'input')" class="subtask-points-select">
                              <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="deleteSubtask(440,442, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
+                           <button onclick="deleteSubtask(454,456, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
                   </div><div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="POMPES 2" onchange="updateSubtaskText(440,443,this.value)" class="subtask-input">
-                           <select onchange="updateSubtaskPoints(440,443,this.value,'input')" class="subtask-points-select">
+                    <input type="text" value="POMPES 2" onchange="updateSubtaskText(454,457,this.value)" class="subtask-input">
+                           <select onchange="updateSubtaskPoints(454,457,this.value,'input')" class="subtask-points-select">
                              <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="deleteSubtask(440,443, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
+                           <button onclick="deleteSubtask(454,457, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
                   </div><div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="GAINNAGE" onchange="updateSubtaskText(440,444,this.value)" class="subtask-input">
-                           <select onchange="updateSubtaskPoints(440,444,this.value,'input')" class="subtask-points-select">
+                    <input type="text" value="GAINNAGE" onchange="updateSubtaskText(454,458,this.value)" class="subtask-input">
+                           <select onchange="updateSubtaskPoints(454,458,this.value,'input')" class="subtask-points-select">
                              <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="deleteSubtask(440,444, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
+                           <button onclick="deleteSubtask(454,458, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
                   </div><div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="ANNEAUX" onchange="updateSubtaskText(440,445,this.value)" class="subtask-input">
-                           <select onchange="updateSubtaskPoints(440,445,this.value,'input')" class="subtask-points-select">
+                    <input type="text" value="ANNEAUX" onchange="updateSubtaskText(454,459,this.value)" class="subtask-input">
+                           <select onchange="updateSubtaskPoints(454,459,this.value,'input')" class="subtask-points-select">
                              <option value="0">0 pts</option><option value="1" selected="">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="deleteSubtask(440,445, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
+                           <button onclick="deleteSubtask(454,459, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
                   </div><div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="JUMPS" onchange="updateSubtaskText(440,446,this.value)" class="subtask-input">
-                           <select onchange="updateSubtaskPoints(440,446,this.value,'input')" class="subtask-points-select">
+                    <input type="text" value="JUMPS" onchange="updateSubtaskText(454,460,this.value)" class="subtask-input">
+                           <select onchange="updateSubtaskPoints(454,460,this.value,'input')" class="subtask-points-select">
                              <option value="0">0 pts</option><option value="1" selected="">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="deleteSubtask(440,446, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
+                           <button onclick="deleteSubtask(454,460, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">✕</button>
                   </div>
               </div>
             
@@ -2854,21 +2885,27 @@
           <div class="card-body" style="flex:1;">
             
             
-        <div class="task-item  task-blink-orange" style="margin-bottom:.5rem;">
-          <div class="task-tooltip">&gt;2 jours</div>
+        <div class="task-item  task-blink-red" style="margin-bottom:.5rem;">
+          <div class="task-tooltip">&gt;3 jours</div>
           <div style="display:flex;align-items:flex-start;gap:.6rem;">
             <div style="flex:1;min-width:0;">
-              <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-                <input type="text" value="RANGEMENTS" onchange="updateTaskText(335,this.value,'progress')" placeholder="Nouvelle tâche…" class="task-text-input">
-                <div style="display:flex;align-items:center;gap:.3rem;">
+              <div class="task-title-row">
+                <input type="text" value="RANGEMENTS" onchange="updateTaskText(335,this.value,'progress')" placeholder="Nouvelle tâche…" class="task-text-input task-title-full">
+              </div>
+              <div class="task-meta-with-actions">
+                <div class="task-meta-left">
+                  <span class="tag tag-cat">MAISON</span>
+                  <span class="task-total-points" title="Somme des points des sous-tâches">🏆 1 pts</span>
+                  <span class="tag tag-date" style="background:transparent;color:var(--ink-muted);">⏱ 3 jours</span>
+                </div>
+                <div class="task-meta-actions">
                   <div class="sticker sticker-empty" onclick="applyStickerToTask(335,'progress', event)" style="cursor:pointer;">+</div>
                   <button onclick="toggleStar(335,'progress', event)" class="star-btn star-inactive">☆</button>
+                  
+                    <button onclick="toggleTaskSubtasks(335, event)" id="btn-task-subtasks-335" class="btn btn-ghost btn-icon-sm" title="Sous-tâches"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon "><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <button onclick="moveToDone(335,true, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
+                  
                 </div>
-              </div>
-              <div class="task-meta">
-                <span class="tag tag-cat">MAISON</span>
-                <span class="task-total-points" title="Somme des points des sous-tâches">🏆 1 pts</span>
-                <span class="tag tag-date" style="background:transparent;color:var(--ink-muted);">⏱ 2 jours</span>
               </div>
               
               <div class="tag tag-date" style="margin-top:.25rem;display:block;">Début · Mercredi 2 Septembre à 11h28</div>
@@ -2877,12 +2914,7 @@
               <div class="tag tag-date" style="display:block;background:var(--gold-pale);color:var(--gold);">Rallongé: JUST DO IT !</div>
               
             </div>
-            <div class="task-actions">
-              
-                <button onclick="toggleTaskSubtasks(335, event)" id="btn-task-subtasks-335" class="btn btn-ghost btn-icon-sm" title="Sous-tâches"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon "><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                <button onclick="moveToDone(335,true, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
-              
-            </div>
+
           </div>
           <div id="taskSubtasks-335" class="subtasks-container collapsed">
             
@@ -2900,81 +2932,82 @@
           </div>
         </div>
       
-        <div class="task-item  " style="margin-bottom:.5rem;">
-          
+        <div class="task-item  task-blink-green" style="margin-bottom:.5rem;">
+          <div class="task-tooltip">&gt;3h</div>
           <div style="display:flex;align-items:flex-start;gap:.6rem;">
             <div style="flex:1;min-width:0;">
-              <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-                <input type="text" value="SERIE 1" onchange="updateTaskText(433,this.value,'progress')" placeholder="Nouvelle tâche…" class="task-text-input">
-                <div style="display:flex;align-items:center;gap:.3rem;">
-                  <div class="sticker sticker-empty" onclick="applyStickerToTask(433,'progress', event)" style="cursor:pointer;">+</div>
-                  <button onclick="toggleStar(433,'progress', event)" class="star-btn star-inactive">☆</button>
+              <div class="task-title-row">
+                <input type="text" value="SERIE 1" onchange="updateTaskText(447,this.value,'progress')" placeholder="Nouvelle tâche…" class="task-text-input task-title-full">
+              </div>
+              <div class="task-meta-with-actions">
+                <div class="task-meta-left">
+                  <span class="tag tag-cat">SPORT</span>
+                  <span class="task-total-points" title="Somme des points des sous-tâches">🏆 2 pts</span>
+                  
+                </div>
+                <div class="task-meta-actions">
+                  <div class="sticker sticker-empty" onclick="applyStickerToTask(447,'progress', event)" style="cursor:pointer;">+</div>
+                  <button onclick="toggleStar(447,'progress', event)" class="star-btn star-inactive">☆</button>
+                  
+                    <button onclick="toggleTaskSubtasks(447, event)" id="btn-task-subtasks-447" class="btn btn-ghost btn-icon-sm" title="Sous-tâches"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon "><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <button onclick="moveToDone(447,true, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
+                  
                 </div>
               </div>
-              <div class="task-meta">
-                <span class="tag tag-cat">SPORT</span>
-                <span class="task-total-points" title="Somme des points des sous-tâches">🏆 2 pts</span>
-                
-              </div>
               
-              <div class="tag tag-date" style="margin-top:.25rem;display:block;">Début · Mercredi 16 Septembre à 10h41</div>
-              <div class="tag tag-date" style="display:block;">En cours · Mercredi 16 Septembre à 10h41</div>
+              <div class="tag tag-date" style="margin-top:.25rem;display:block;">Début · Jeudi 17 Septembre à 12h43</div>
+              <div class="tag tag-date" style="display:block;">En cours · Jeudi 17 Septembre à 12h43</div>
               
               
               
             </div>
-            <div class="task-actions">
-              
-                <button onclick="toggleTaskSubtasks(433, event)" id="btn-task-subtasks-433" class="btn btn-ghost btn-icon-sm" title="Sous-tâches"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon rotated"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                <button onclick="moveToDone(433,true, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
-              
-            </div>
+
           </div>
-          <div id="taskSubtasks-433" class="subtasks-container expanded">
+          <div id="taskSubtasks-447" class="subtasks-container collapsed">
             
               <div style="margin-top:.6rem;margin-left:.8rem;padding-left:.75rem;border-left:2px solid var(--ivory-deep);display:flex;flex-direction:column;gap:.3rem;">
                 <div class="subtask-row" style="opacity:.6">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="POMPES 1" onchange="updateSubtaskText(433,434,this.value)" class="subtask-input text-muted">
-                           <select onchange="updateSubtaskPoints(433,434,this.value,'progress')" class="subtask-points-select">
+                    <input type="text" value="POMPES 1" onchange="updateSubtaskText(447,448,this.value)" class="subtask-input text-muted">
+                           <select onchange="updateSubtaskPoints(447,448,this.value,'progress')" class="subtask-points-select">
                              <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="toggleSubtaskComplete(433,434, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Toggle">✓</button>
-                  </div><div class="subtask-row" style="">
+                           <button onclick="toggleSubtaskComplete(447,448, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Toggle">✓</button>
+                  </div><div class="subtask-row" style="opacity:.6">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="ABDOS" onchange="updateSubtaskText(433,435,this.value)" class="subtask-input ">
-                           <select onchange="updateSubtaskPoints(433,435,this.value,'progress')" class="subtask-points-select">
+                    <input type="text" value="ABDOS" onchange="updateSubtaskText(447,449,this.value)" class="subtask-input text-muted">
+                           <select onchange="updateSubtaskPoints(447,449,this.value,'progress')" class="subtask-points-select">
                              <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="toggleSubtaskComplete(433,435, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
+                           <button onclick="toggleSubtaskComplete(447,449, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Toggle">✓</button>
                   </div><div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="POMPES 2" onchange="updateSubtaskText(433,436,this.value)" class="subtask-input ">
-                           <select onchange="updateSubtaskPoints(433,436,this.value,'progress')" class="subtask-points-select">
+                    <input type="text" value="POMPES 2" onchange="updateSubtaskText(447,450,this.value)" class="subtask-input ">
+                           <select onchange="updateSubtaskPoints(447,450,this.value,'progress')" class="subtask-points-select">
                              <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="toggleSubtaskComplete(433,436, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
+                           <button onclick="toggleSubtaskComplete(447,450, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
                   </div><div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="GAINNAGE" onchange="updateSubtaskText(433,437,this.value)" class="subtask-input ">
-                           <select onchange="updateSubtaskPoints(433,437,this.value,'progress')" class="subtask-points-select">
+                    <input type="text" value="GAINNAGE" onchange="updateSubtaskText(447,451,this.value)" class="subtask-input ">
+                           <select onchange="updateSubtaskPoints(447,451,this.value,'progress')" class="subtask-points-select">
                              <option value="0" selected="">0 pts</option><option value="1">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="toggleSubtaskComplete(433,437, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
+                           <button onclick="toggleSubtaskComplete(447,451, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
                   </div><div class="subtask-row" style="">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="ANNEAUX" onchange="updateSubtaskText(433,438,this.value)" class="subtask-input ">
-                           <select onchange="updateSubtaskPoints(433,438,this.value,'progress')" class="subtask-points-select">
+                    <input type="text" value="ANNEAUX" onchange="updateSubtaskText(447,452,this.value)" class="subtask-input ">
+                           <select onchange="updateSubtaskPoints(447,452,this.value,'progress')" class="subtask-points-select">
                              <option value="0">0 pts</option><option value="1" selected="">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="toggleSubtaskComplete(433,438, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
-                  </div><div class="subtask-row" style="">
+                           <button onclick="toggleSubtaskComplete(447,452, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
+                  </div><div class="subtask-row" style="opacity:.6">
                     <span class="subtask-connector">└</span>
-                    <input type="text" value="JUMPS" onchange="updateSubtaskText(433,439,this.value)" class="subtask-input ">
-                           <select onchange="updateSubtaskPoints(433,439,this.value,'progress')" class="subtask-points-select">
+                    <input type="text" value="JUMPS" onchange="updateSubtaskText(447,453,this.value)" class="subtask-input text-muted">
+                           <select onchange="updateSubtaskPoints(447,453,this.value,'progress')" class="subtask-points-select">
                              <option value="0">0 pts</option><option value="1" selected="">1 pts</option><option value="2">2 pts</option><option value="3">3 pts</option><option value="4">4 pts</option><option value="5">5 pts</option>
                            </select>
-                           <button onclick="toggleSubtaskComplete(433,439, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Toggle">✓</button>
+                           <button onclick="toggleSubtaskComplete(447,453, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Toggle">✓</button>
                   </div>
               </div>
             
@@ -2990,7 +3023,7 @@
             <div class="card-header-title">
               <span class="section-icon section-icon-teal">✓</span>
               <h2 class="card-title">Done</h2>
-              <span class="count-badge">2</span>
+              <span class="count-badge">4</span>
             </div>
           </div>
           
@@ -3012,17 +3045,22 @@
           
           <div style="display:flex;align-items:flex-start;gap:.6rem;">
             <div style="flex:1;min-width:0;">
-              <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-                <span class="task-text-done">VOITURE</span>
-                <div style="display:flex;align-items:center;gap:.3rem;">
-                  
+              <div class="task-title-row">
+                <span class="task-text-done task-title-full">VOITURE</span>
+              </div>
+              <div class="task-meta-with-actions">
+                <div class="task-meta-left">
+                  <span class="tag tag-cat">VOITURE</span>
+                  <span class="task-total-points" title="Somme des points des sous-tâches">🏆 1 pts</span>
                   
                 </div>
-              </div>
-              <div class="task-meta">
-                <span class="tag tag-cat">VOITURE</span>
-                <span class="task-total-points" title="Somme des points des sous-tâches">🏆 1 pts</span>
-                
+                <div class="task-meta-actions">
+                  
+                  
+                  
+                    <button onclick="deleteTask(267, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">🗑</button>
+                  
+                </div>
               </div>
               
               
@@ -3031,11 +3069,7 @@
               <div class="tag tag-date" style="display:block;background:var(--gold-pale);color:var(--gold);">Rallongé: JUST DO IT !</div>
               
             </div>
-            <div class="task-actions">
-              
-                <button onclick="deleteTask(267, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">🗑</button>
-              
-            </div>
+
           </div>
           <div id="taskSubtasks-267" class="subtasks-container collapsed">
             
@@ -3054,17 +3088,22 @@
           
           <div style="display:flex;align-items:flex-start;gap:.6rem;">
             <div style="flex:1;min-width:0;">
-              <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
-                <span class="task-text-done">SERIE 1</span>
-                <div style="display:flex;align-items:center;gap:.3rem;">
-                  
+              <div class="task-title-row">
+                <span class="task-text-done task-title-full">SERIE 1</span>
+              </div>
+              <div class="task-meta-with-actions">
+                <div class="task-meta-left">
+                  <span class="tag tag-cat">SPORT</span>
+                  <span class="task-total-points" title="Somme des points des sous-tâches">🏆 2 pts</span>
                   
                 </div>
-              </div>
-              <div class="task-meta">
-                <span class="tag tag-cat">SPORT</span>
-                <span class="task-total-points" title="Somme des points des sous-tâches">🏆 2 pts</span>
-                
+                <div class="task-meta-actions">
+                  
+                  
+                  
+                    <button onclick="deleteTask(426, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">🗑</button>
+                  
+                </div>
               </div>
               
               
@@ -3073,13 +3112,135 @@
               
               
             </div>
-            <div class="task-actions">
-              
-                <button onclick="deleteTask(426, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">🗑</button>
-              
-            </div>
+
           </div>
           <div id="taskSubtasks-426" class="subtasks-container collapsed">
+            
+              <div style="margin-top:.6rem;margin-left:.8rem;padding-left:.75rem;border-left:2px solid var(--ivory-deep);display:flex;flex-direction:column;gap:.3rem;">
+                <div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">POMPES 1</span>
+                         <span class="subtask-points-badge">0 pts</span>
+                  </div><div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">ABDOS</span>
+                         <span class="subtask-points-badge">0 pts</span>
+                  </div><div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">POMPES 2</span>
+                         <span class="subtask-points-badge">0 pts</span>
+                  </div><div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">GAINNAGE</span>
+                         <span class="subtask-points-badge">0 pts</span>
+                  </div><div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">ANNEAUX</span>
+                         <span class="subtask-points-badge">1 pts</span>
+                  </div><div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">JUMPS</span>
+                         <span class="subtask-points-badge">1 pts</span>
+                  </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="task-item is-done " style="margin-bottom:.5rem;">
+          
+          <div style="display:flex;align-items:flex-start;gap:.6rem;">
+            <div style="flex:1;min-width:0;">
+              <div class="task-title-row">
+                <span class="task-text-done task-title-full">SERIE 2</span>
+              </div>
+              <div class="task-meta-with-actions">
+                <div class="task-meta-left">
+                  <span class="tag tag-cat">SPORT</span>
+                  <span class="task-total-points" title="Somme des points des sous-tâches">🏆 2 pts</span>
+                  
+                </div>
+                <div class="task-meta-actions">
+                  
+                  
+                  
+                    <button onclick="deleteTask(440, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">🗑</button>
+                  
+                </div>
+              </div>
+              
+              
+              <div class="tag tag-date" style="display:block;">En cours · Jeudi 17 Septembre à 12h43</div>
+              <div class="tag tag-date" style="display:block;">Fin · Jeudi 17 Septembre à 12h43</div>
+              
+              
+            </div>
+
+          </div>
+          <div id="taskSubtasks-440" class="subtasks-container collapsed">
+            
+              <div style="margin-top:.6rem;margin-left:.8rem;padding-left:.75rem;border-left:2px solid var(--ivory-deep);display:flex;flex-direction:column;gap:.3rem;">
+                <div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">POMPES 1</span>
+                         <span class="subtask-points-badge">0 pts</span>
+                  </div><div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">ABDOS</span>
+                         <span class="subtask-points-badge">0 pts</span>
+                  </div><div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">POMPES 2</span>
+                         <span class="subtask-points-badge">0 pts</span>
+                  </div><div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">GAINNAGE</span>
+                         <span class="subtask-points-badge">0 pts</span>
+                  </div><div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">ANNEAUX</span>
+                         <span class="subtask-points-badge">1 pts</span>
+                  </div><div class="subtask-row" style="opacity:.6">
+                    <span class="subtask-connector">└</span>
+                    <span style="flex:1;font-size:.73rem;color:var(--ink-muted);text-decoration:line-through;">JUMPS</span>
+                         <span class="subtask-points-badge">1 pts</span>
+                  </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="task-item is-done " style="margin-bottom:.5rem;">
+          
+          <div style="display:flex;align-items:flex-start;gap:.6rem;">
+            <div style="flex:1;min-width:0;">
+              <div class="task-title-row">
+                <span class="task-text-done task-title-full">SERIE 1</span>
+              </div>
+              <div class="task-meta-with-actions">
+                <div class="task-meta-left">
+                  <span class="tag tag-cat">SPORT</span>
+                  <span class="task-total-points" title="Somme des points des sous-tâches">🏆 2 pts</span>
+                  
+                </div>
+                <div class="task-meta-actions">
+                  
+                  
+                  
+                    <button onclick="deleteTask(433, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">🗑</button>
+                  
+                </div>
+              </div>
+              
+              
+              <div class="tag tag-date" style="display:block;">En cours · Mercredi 16 Septembre à 10h41</div>
+              <div class="tag tag-date" style="display:block;">Fin · Jeudi 17 Septembre à 12h43</div>
+              
+              
+            </div>
+
+          </div>
+          <div id="taskSubtasks-433" class="subtasks-container expanded">
             
               <div style="margin-top:.6rem;margin-left:.8rem;padding-left:.75rem;border-left:2px solid var(--ivory-deep);display:flex;flex-direction:column;gap:.3rem;">
                 <div class="subtask-row" style="opacity:.6">
@@ -3177,6 +3338,8 @@
 
     /* ─────────────────────── VERSIONS DATA (v93) ─────────────────────── */
     const versionsData = [
+      { number: "v2.4", date: "17 Sept 2026", features: ["🎨 VISUEL DES CARTES — Sticker, étoile et boutons d\'action (sous-tâches, ajouter, In Progress, Done) déplacés sur la ligne des points pour libérer la largeur du titre"] },
+      { number: "v2.3", date: "17 Sept 2026", features: ["🔘 BOUTON TRACKING — Suppression de l'export automatique matinal ; ajout d'un bouton manuel « Tracking » à côté de Reset pour exporter et vider la colonne Done", "️ L'export se déclenche uniquement au clic du bouton, plus automatiquement entre 7h et 11h30"] },
       { number: "v2.2", date: "16 Sept 2026", features: ["📅 DURÉE DANS DATES IMPORTANTES — Ajout de champs optionnels « Date de fin » et « Durée » pour les événements sur plusieurs jours (ex : Vacances Toussaints du 26/10 au 30/10)", "️ La durée s'affiche dans la liste des dates importantes, sans heures obligatoires"] },
       { number: "v2.1", date: "14 Sept 2026", features: ["☁️ SUPABASE — Le bouton Sauvegarder exporte désormais vers localStorage ET Supabase ; le bouton Cloud importe depuis Supabase", "🔧 Configuration Supabase requise : table `exportcloud` avec colonnes `id` (int, primary key), `data` (text) et `created_at`", "⚙️ Paramètres à configurer : SUPABASE_URL et SUPABASE_ANON_KEY"] },
       { number: "v2.0", date: "14 Sept 2026", features: ["☁️ BOUTON CLOUD — Nouveau bouton Cloud dans la barre d'en-tête, à côté de Restaurer/Sauvegarder/Reset ; désactivé par défaut (grisé), cliquable pour basculer entre actif (couleur slate active) et inactif (grisé)", "🔜 PRÉPARATION SUPABASE — Le bouton est prêt pour l'intégration future avec Supabase : export vers le cloud et import depuis le cloud"] },
@@ -3843,7 +4006,7 @@
       const h=now.getHours(), min=now.getMinutes().toString().padStart(2,'0');
       const filename = `Planner_sauvegarde_GLOBALE_${d}-${m}-${y}_${h}h${min}.txt`;
 
-      let content = `========================================\nSAUVEGARDE COMPLETE DAILY PLANNER\nVersion v2.2 - Export global (Supabase) : PRO + PRIVEE + TRACKING (Tâches obligatoires triées : actives en haut)\nDate: ${d}/${m}/${y} à ${h}:${min}\n========================================\n`;
+      let content = `========================================\nSAUVEGARDE COMPLETE DAILY PLANNER\nVersion v2.4 - Export global (Supabase) : PRO + PRIVEE + TRACKING (Tâches obligatoires triées : actives en haut)\nDate: ${d}/${m}/${y} à ${h}:${min}\n========================================\n`;
 
       const writeModeSection = (modeLabel, modeData) => {
         let s = `\n\n════════ MODE ${modeLabel} ════════\n\n`;
@@ -3926,47 +4089,53 @@
         'apikey': SUPABASE_ANON_KEY,
         'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
         'Content-Type': 'application/json',
-        'Prefer': 'return=minimal'
+        'Prefer': 'return=representation'
       };
       const payload = {
         id: 1,
         data: backupContent
       };
       try {
-        // La ligne id=1 existe normalement déjà. PATCH évite alors d'exiger
-        // la policy INSERT, souvent absente alors que UPDATE est autorisé.
-        let writeResponse = await fetch(`${SUPABASE_URL}/rest/v1/exportcloud?id=eq.1`, {
-          method: 'PATCH',
-          headers,
-          body: JSON.stringify({ data: payload.data })
+        // Vérifier d'abord si la ligne existe. Ainsi, une réponse 204 d'un
+        // PATCH est correctement considérée comme une réussite et on évite
+        // de tenter inutilement un INSERT sur une clé primaire déjà présente.
+        const existingResponse = await fetch(`${SUPABASE_URL}/rest/v1/exportcloud?select=id&id=eq.1`, {
+          method: 'GET',
+          headers: { ...headers, 'Accept': 'application/json' }
         });
-
-        if (writeResponse.ok) {
-          console.log('✅ Sauvegarde Supabase réussie');
-          return true;
-        }
-        const patchError = await writeResponse.text();
-        if (writeResponse.status === 404) {
-          writeResponse = await fetch(`${SUPABASE_URL}/rest/v1/exportcloud`, {
-            method: 'POST',
-            headers,
-            body: JSON.stringify(payload)
-          });
-          if (writeResponse.ok) {
-            console.log('✅ Première sauvegarde Supabase créée');
-            return true;
-          }
-          const insertError = await writeResponse.text();
-          console.error('❌ Erreur Supabase INSERT:', writeResponse.status, insertError);
-          alert(`❌ Supabase refuse la création (INSERT, HTTP ${writeResponse.status}).\n\nLa sauvegarde locale a bien été conservée.\n\nDétail : ${insertError.substring(0, 240)}`);
+        if (!existingResponse.ok) {
+          const errorText = await existingResponse.text();
+          console.error('❌ Vérification Supabase impossible:', existingResponse.status, errorText);
+          alert(`❌ Supabase refuse l'accès à la table exportcloud (HTTP ${existingResponse.status}).\n\nVérifiez la policy SELECT pour le rôle anon.\n\nDétail : ${errorText.substring(0, 240)}`);
           return false;
         }
-        console.error('❌ Erreur Supabase UPDATE:', writeResponse.status, patchError);
-        alert(`❌ Supabase refuse la sauvegarde (UPDATE, HTTP ${writeResponse.status}).\n\nLa sauvegarde locale a bien été conservée.\n\nDétail : ${patchError.substring(0, 240)}`);
+
+        const existingRows = await existingResponse.json();
+        const rowExists = Array.isArray(existingRows) && existingRows.some(row => String(row.id) === '1');
+
+        const writeResponse = rowExists
+          ? await fetch(`${SUPABASE_URL}/rest/v1/exportcloud?id=eq.1`, {
+              method: 'PATCH',
+              headers,
+              body: JSON.stringify({ data: payload.data })
+            })
+          : await fetch(`${SUPABASE_URL}/rest/v1/exportcloud`, {
+              method: 'POST',
+              headers,
+              body: JSON.stringify(payload)
+            });
+
+        if (writeResponse.ok) {
+          console.log(rowExists ? '✅ Mise à jour Supabase réussie' : '✅ Création de la sauvegarde Supabase réussie');
+          return true;
+        }
+        const writeError = await writeResponse.text();
+        const policy = rowExists ? 'UPDATE' : 'INSERT';
+        console.error(`❌ Erreur Supabase ${policy}:`, writeResponse.status, writeError);
+        alert(`❌ Supabase refuse l'export (${policy}, HTTP ${writeResponse.status}).\n\nLa sauvegarde locale a bien été conservée.\n\nDétail : ${writeError.substring(0, 240)}`);
         return false;
       } catch(e) {
         console.error('❌ Exception Supabase:', e);
-        alert(`❌ Export Supabase impossible.\n\nLa sauvegarde locale a bien été conservée.\n\nDétail : ${e.message || e}`);
         return false;
       }
     }
@@ -4135,21 +4304,13 @@
       localStorage.setItem('planner_v35_last_mode', currentMode);
       lastSaveTime = timeStr;
       if (triggerDownload) { 
-        // Exporter d'abord vers Supabase : certains navigateurs mobiles
-        // interrompent les requêtes réseau après le déclenchement d'un
-        // téléchargement de fichier.
+        createFullBackupFile(); 
+        // Export simultané vers Supabase
         const now2 = new Date();
         const d2=now2.getDate(), m2=now2.getMonth()+1, y2=now2.getFullYear();
         const h2=now2.getHours(), min2=now2.getMinutes().toString().padStart(2,'0');
-        const supabaseContent = `========================================\nSAUVEGARDE COMPLETE DAILY PLANNER\nVersion v2.2 - Export global (Supabase)\nDate: ${d2}/${m2}/${y2} à ${h2}:${min2}\n========================================\n` + gatherFullBackupJSONString();
-        const supabasePromise = exportToSupabase(supabaseContent);
-        const isIPhone = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
-          (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-        // Safari peut interrompre une requête volumineuse si le téléchargement
-        // démarre dans le même geste utilisateur. localStorage est déjà écrit.
-        if (!isIPhone) createFullBackupFile();
-        supabasePromise.then(success => {
-          if (isIPhone) createFullBackupFile();
+        const supabaseContent = `========================================\nSAUVEGARDE COMPLETE DAILY PLANNER\nVersion v2.4 - Export global (Supabase)\nDate: ${d2}/${m2}/${y2} à ${h2}:${min2}\n========================================\n` + gatherFullBackupJSONString();
+        exportToSupabase(supabaseContent).then(success => {
           if(success) alert('✅ Sauvegarde globale effectuée !\n• Téléchargement local OK\n• Export Supabase OK');
           else alert('❌ Sauvegarde locale OK, mais export Supabase refusé.\n\nVérifiez les policies RLS UPDATE et INSERT de la table exportcloud pour le rôle anon.\n\nSi ce message reste ancien, rechargez la page publiée avec Ctrl + F5.');
         });
@@ -4436,8 +4597,7 @@
         loadFromLocalStorage();
         loadImportantDates();
         loadMandatoryTasks();
-        checkMorningExport();
-      }
+              }
       render();
     }
 
@@ -5189,20 +5349,33 @@
           ${tooltipText?`<div class="task-tooltip">${tooltipText}</div>`:''}
           <div style="display:flex;align-items:flex-start;gap:.6rem;">
             <div style="flex:1;min-width:0;">
-              <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">
+              <div class="task-title-row">
                 ${isDone
-                  ? `<span class="task-text-done">${escapeHtml((task.text||'Tâche vide').replace('{n}','').replace(/\s+$/,''))}</span>`
-                  : `<input type="text" value="${escapeHtml(task.text.includes('{n}') ? task.text.replace('{n}','').replace(/\s+$/,'') : task.text)}" onchange="updateTaskText(${task.id},this.value,'${col}')" placeholder="Nouvelle tâche…" class="task-text-input" ${task.text.includes('{n}')?'readonly style="cursor:default;"':''}>`
+                  ? `<span class="task-text-done task-title-full">${escapeHtml((task.text||'Tâche vide').replace('{n}','').replace(/\s+$/,''))}</span>`
+                  : `<input type="text" value="${escapeHtml(task.text.includes('{n}') ? task.text.replace('{n}','').replace(/\s+$/,'') : task.text)}" onchange="updateTaskText(${task.id},this.value,'${col}')" placeholder="Nouvelle tâche…" class="task-text-input task-title-full" ${task.text.includes('{n}')?'readonly style="cursor:default;"':''}>`
                 }
-                <div style="display:flex;align-items:center;gap:.3rem;">
+              </div>
+              <div class="task-meta-with-actions">
+                <div class="task-meta-left">
+                  ${task.category?`<span class="tag tag-cat">${task.category}</span>`:''}
+                  ${pointsDisplay}
+                  ${dayIndicator}
+                </div>
+                <div class="task-meta-actions">
                   ${canHaveSticker && sticker ? `<div class="sticker ${stickerClass}" onclick="removeStickerFromTask(${task.id},'${col}', event)" style="cursor:pointer;">${sticker}</div>` : canHaveSticker && !sticker ? `<div class="sticker sticker-empty" onclick="applyStickerToTask(${task.id},'${col}', event)" style="cursor:pointer;">+</div>` : ''}
                   ${(col==='input'||col==='progress')&&!isDone? `<button onclick="toggleStar(${task.id},'${col}', event)" class="star-btn ${isStarred ? 'star-active' : 'star-inactive'}">${isStarred ? '★' : '☆'}</button>`:''}
+                  ${col==='input'?`
+                    ${hasSubtasks?`<button onclick="toggleTaskSubtasks(${task.id}, event)" id="btn-task-subtasks-${task.id}" class="btn btn-ghost btn-icon-sm" title="Sous-tâches">${chevronSVG(subtasksVisible?'rotated':'')}</button>`:''}
+                    <button onclick="addSubtask(${task.id}, event)" class="btn btn-subtle btn-icon-sm" title="Ajouter sous-tâche" style="font-size:.8rem;">📋</button>
+                    <button onclick="moveToProgress(${task.id}, event)" class="btn btn-icon-sm" style="background:var(--slate-pale);color:var(--slate);" title="In Progress">⚡</button>
+                    <button onclick="moveToDone(${task.id},false, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
+                  `:col==='progress'?`
+                    ${hasSubtasks?`<button onclick="toggleTaskSubtasks(${task.id}, event)" id="btn-task-subtasks-${task.id}" class="btn btn-ghost btn-icon-sm" title="Sous-tâches">${chevronSVG(subtasksVisible?'rotated':'')}</button>`:''}
+                    <button onclick="moveToDone(${task.id},true, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
+                  `:`
+                    <button onclick="deleteTask(${task.id}, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">🗑</button>
+                  `}
                 </div>
-              </div>
-              <div class="task-meta">
-                ${task.category?`<span class="tag tag-cat">${task.category}</span>`:''}
-                ${pointsDisplay}
-                ${dayIndicator}
               </div>
               ${col==='input' && task.text && task.text.includes('{n}') ? `
                 <div class="serie-pill-row" style="display:flex;gap:.45rem;margin-top:.45rem;align-items:center;">
@@ -5217,19 +5390,7 @@
               ${task.extensionReason?`<div class="tag tag-date" style="display:block;background:var(--gold-pale);color:var(--gold);">Rallongé: ${task.extensionReason}</div>`:''}
               ${task.abandonReason?`<div class="tag tag-date" style="display:block;background:var(--violet-pale);color:var(--violet);">Abandon: ${task.abandonReason}</div>`:''}
             </div>
-            <div class="task-actions">
-              ${col==='input'?`
-                ${hasSubtasks?`<button onclick="toggleTaskSubtasks(${task.id}, event)" id="btn-task-subtasks-${task.id}" class="btn btn-ghost btn-icon-sm" title="Sous-tâches">${chevronSVG(subtasksVisible?'rotated':'')}</button>`:''}
-                <button onclick="addSubtask(${task.id}, event)" class="btn btn-subtle btn-icon-sm" title="Ajouter sous-tâche" style="font-size:.8rem;">📋</button>
-                <button onclick="moveToProgress(${task.id}, event)" class="btn btn-icon-sm" style="background:var(--slate-pale);color:var(--slate);" title="In Progress">⚡</button>
-                <button onclick="moveToDone(${task.id},false, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
-              `:col==='progress'?`
-                ${hasSubtasks?`<button onclick="toggleTaskSubtasks(${task.id}, event)" id="btn-task-subtasks-${task.id}" class="btn btn-ghost btn-icon-sm" title="Sous-tâches">${chevronSVG(subtasksVisible?'rotated':'')}</button>`:''}
-                <button onclick="moveToDone(${task.id},true, event)" class="btn btn-icon-sm" style="background:var(--teal-pale);color:var(--teal);" title="Done">✓</button>
-              `:`
-                <button onclick="deleteTask(${task.id}, event)" class="btn btn-icon-sm" style="background:var(--ivory-warm);color:var(--ink-muted);" title="Supprimer">🗑</button>
-              `}
-            </div>
+
           </div>
           <div id="taskSubtasks-${task.id}" class="subtasks-container ${hasSubtasks&&subtasksVisible?'expanded':'collapsed'}">
             ${hasSubtasks?`
@@ -5715,7 +5876,7 @@
               </div>
             </div>
             <div style="padding:.9rem 1.8rem;border-top:1px solid var(--ivory-deep);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
-              <span style="font-size:.7rem;color:var(--ink-muted);">Daily Planner · Édition v2.2 · Tâches obligatoires triées (passées en bas) · 2026</span>
+              <span style="font-size:.7rem;color:var(--ink-muted);">Daily Planner · Édition v2.4 · Tâches obligatoires triées (passées en bas) · 2026</span>
               <div style="display:flex;gap:.4rem;">
                 <button onclick="document.getElementById('infoModalScroll').scrollTo({top:0,behavior:'smooth'})" class="btn btn-ghost btn-sm" style="font-size:.75rem;padding:.3rem .7rem;">↑ Haut</button>
                 <button onclick="document.getElementById('infoModalScroll').scrollTo({top:99999,behavior:'smooth'})" class="btn btn-ghost btn-sm" style="font-size:.75rem;padding:.3rem .7rem;">↓ Bas</button>
@@ -5835,6 +5996,31 @@
       const key=mode==='PRO'?'planner_v35_data_pro':'planner_v35_data_privee';
       const saved=localStorage.getItem(key); if(saved){const d=JSON.parse(saved);d.doneTasks=[];localStorage.setItem(key,JSON.stringify(d));}
     }
+    
+    // ── MANUAL TRACKING EXPORT BUTTON ──
+    function manualTrackingExport() {
+      if (doneTasks.length === 0) {
+        alert('⚠️ La colonne Done est vide.\n\nAucune tâche à exporter.');
+        return;
+      }
+      
+      if (!confirm(` EXPORTER ET VIDER LA COLONNE DONE ?\n\n${doneTasks.length} tâche(s) seront exportées dans un fichier .txt puis supprimées de la colonne Done.\n\nContinuer ?`)) {
+        return;
+      }
+      
+      // Export the tasks
+      exportDoneTasksForMode(doneTasks, currentMode);
+      
+      // Clear doneTasks array
+      doneTasks = [];
+      
+      // Save to localStorage
+      saveToLocalStorage(false, false);
+      
+      alert(`✅ Export terminé !\n\n• Fichier téléchargé : Export_Done_${currentMode}_*.txt\n• Colonne Done vidée\n• Données sauvegardées`);
+      
+      render();
+    }
 
     /* ─────────────────────── MAIN RENDER ─────────────────────── */
     function render(preserveScroll = true) {
@@ -5854,7 +6040,7 @@
                 <button onclick="switchMode('TRACKING')" class="mode-btn active-con">Tracking</button>
               </div>
               <div style="display:flex;align-items:center;">
-                <h1 class="app-title">Daily Planner <span class="version">v2.2</span></h1>
+                <h1 class="app-title">Daily Planner <span class="version">v2.4</span></h1>
                 <div class="info-btn" onclick="toggleInfoModal()" title="Informations sur les versions">ⓘ</div>
               </div>
             </header>
@@ -5873,10 +6059,10 @@
               <button onclick="switchMode('TRACKING')" class="mode-btn ${isTrk?'active-con':''}">Tracking</button>
             </div>
             <div style="display:flex;align-items:center;">
-              <h1 class="app-title">Daily Planner <span class="version">v2.2</span></h1>
+              <h1 class="app-title">Daily Planner <span class="version">v2.4</span></h1>
               <div class="info-btn" onclick="toggleInfoModal()" title="Informations sur les versions">ⓘ</div>
             </div>
-            <div class="datetime-badge">${formatDateTime()}${lastSaveTime?` <span style="margin:0 .4rem;opacity:.4;">·</span> <span class="save-dot"></span> Sauvegardé ${lastSaveTime}`:''}</div><div class="header-meta">${(()=>{const cs=getCalendarIconState();return `<button onclick="toggleImportantDatesModal()" class="calendar-icon-btn ${cs.level!=='none'?'cal-'+cs.level:''}" title="Dates importantes">📅${cs.count>0?`<span class="cal-badge">${cs.count}</span>`:''}</button>`;})()}${(()=>{const ms=getMandatoryIconState();return `<button onclick="toggleMandatoryModal()" class="mandatory-icon-btn ${ms.level!=='none'?'mand-'+ms.level:''}" title="Tâches obligatoires">❗${ms.count>0?`<span class="mand-badge">${ms.count}</span>`:''}</button>`;})()}<button onclick="restoreFromBackup()" class="btn btn-ghost">📂 Restaurer</button><button onclick="toggleCloudButton()" id="cloudBtn" class="btn btn-cloud" title="☁️ Cliquer pour importer depuis Supabase">☁️ Cloud</button><button onclick="saveToLocalStorage(true)" class="btn btn-success">💾 Sauvegarder</button><button onclick="resetAllTasks()" class="btn btn-danger">🔄 Reset</button></div>
+            <div class="datetime-badge">${formatDateTime()}${lastSaveTime?` <span style="margin:0 .4rem;opacity:.4;">·</span> <span class="save-dot"></span> Sauvegardé ${lastSaveTime}`:''}</div><div class="header-meta">${(()=>{const cs=getCalendarIconState();return `<button onclick="toggleImportantDatesModal()" class="calendar-icon-btn ${cs.level!=='none'?'cal-'+cs.level:''}" title="Dates importantes">📅${cs.count>0?`<span class="cal-badge">${cs.count}</span>`:''}</button>`;})()}${(()=>{const ms=getMandatoryIconState();return `<button onclick="toggleMandatoryModal()" class="mandatory-icon-btn ${ms.level!=='none'?'mand-'+ms.level:''}" title="Tâches obligatoires">❗${ms.count>0?`<span class="mand-badge">${ms.count}</span>`:''}</button>`;})()}<button onclick="restoreFromBackup()" class="btn btn-ghost">📂 Restaurer</button><button onclick="toggleCloudButton()" id="cloudBtn" class="btn btn-cloud" title="☁️ Cliquer pour importer depuis Supabase">☁️ Cloud</button><button onclick="saveToLocalStorage(true)" class="btn btn-success">💾 Sauvegarder</button><button onclick="manualTrackingExport()" class="btn" style="background:var(--teal);color:white;">📊 Tracking</button><button onclick="resetAllTasks()" class="btn btn-danger">🔄 Reset</button></div>
           </header>
 
             <div class="center-toggle"><button onclick="toggleLibraryDonut()" id="btn-library-donut-toggle" class="toggle-chevron-btn" title="Afficher/masquer librairie">${chevronSVG(libraryDonutVisible?'rotated':'')}</button></div>
@@ -5916,20 +6102,6 @@
     }
 
     /* ─── EXPORT MATINAL AUTOMATIQUE ─── */
-    function checkMorningExport() {
-      if (!isPlannerMode()) return;
-      if (doneTasks.length === 0) return;
-      const now = new Date();
-      const h = now.getHours(), min = now.getMinutes();
-      const inWindow = (h === 7) || (h >= 8 && h <= 10) || (h === 11 && min <= 30);
-      if (!inWindow) return;
-      const todayKey = `${now.getDate()}-${now.getMonth()+1}-${now.getFullYear()}`;
-      if (lastMorningExportDate === todayKey) return;
-      exportDoneTasksForMode(doneTasks, currentMode);
-      doneTasks = [];
-      lastMorningExportDate = todayKey;
-      saveToLocalStorage(false, false);
-    }
 
     /* ─────────────────────── BOOT ─────────────────────── */
     window.addEventListener('load', () => {
@@ -5941,13 +6113,11 @@
       loadFromLocalStorage();
       loadImportantDates();
       loadMandatoryTasks();
-      checkMorningExport();
-      render();
+            render();
       setInterval(() => {
         if(isPlannerMode()) {
           check5DayTasks();
-          checkMorningExport();
-          checkThreePointsExpiry();
+                    checkThreePointsExpiry();
           saveToLocalStorage(false, false);
           if (!showImportantDatesModal && !showMandatoryModal) {
             render();
@@ -5960,8 +6130,7 @@
       // l'export automatique du matin.
       document.addEventListener('visibilitychange', () => {
         if (!document.hidden && isPlannerMode()) {
-          checkMorningExport();
-          checkThreePointsExpiry();
+                    checkThreePointsExpiry();
           render();
         }
       });
